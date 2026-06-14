@@ -1,0 +1,880 @@
+# Device Library Catalogue
+# uDos SonicScrewdriver - Global Device Database
+# Schema Version: 1.0
+# Last Updated: 2025-01-19
+# Format: YAML 1.2
+
+# Categories:
+#   fit_for_purpose: Production-ready, fully supported
+#   experimental: New/untested, may have unexpected behavior
+#   legacy: Older devices, maintained but not recommended for new deployments
+#   unsupported: Known devices that are not officially supported
+
+# Capability Classifications:
+#   reflashable: Can have firmware/OS rewritten
+#   bootable: Can boot from external media
+#   network_boot: Supports PXE/iPXE network boot
+#   usb_boot: Supports USB boot
+#   storage: Has persistent storage
+#   compute: Can run applications/OS
+#   headless: No display output (SSH/serial only)
+#   gpu: Has dedicated GPU
+#   touchscreen: Has touch input
+#   audio: Audio input/output
+#   wifi: Wireless networking
+#   bluetooth: Bluetooth connectivity
+#   ethernet: Wired networking
+#   serial: Serial/UART interface
+#   jtag: JTAG debugging interface
+#   spi: SPI interface
+#   i2c: I2C interface
+
+version: 1.0
+schema: "https://udos.world/schemas/device-catalogue/v1.json"
+updated_at: "2025-01-19T12:00:00Z"
+total_devices: 12
+
+# ============================================
+# Device Index
+# ============================================
+devices:
+  # ---- Raspberry Pi Series ----
+  rpi4b:
+    id: rpi4b
+    name: "Raspberry Pi 4 Model B"
+    manufacturer: "Raspberry Pi Foundation"
+    type: sbc
+    category: fit_for_purpose
+    description: "High-performance single-board computer with quad-core CPU"
+    capabilities:
+      - reflashable
+      - bootable
+      - usb_boot
+      - network_boot
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - 4gb
+      - 8gb
+      - hdmi
+    specifications:
+      cpu: "Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit"
+      ram: "2GB, 4GB, or 8GB LPDDR4-3200"
+      storage: "MicroSD (primary), USB 3.0 (secondary)"
+      usb_ports: 2x USB 3.0, 2x USB 2.0
+      network: "Gigabit Ethernet, 2.4GHz/5.0GHz WiFi, Bluetooth 5.0"
+      gpu: "VideoCore VI"
+      power: "USB-C, 5V/3A"
+    reflash_methods:
+      - method: raspberrypi-imager
+        tool: "Raspberry Pi Imager"
+        notes: "Official GUI tool, cross-platform"
+      - method: dd
+        tool: "dd"
+        command: "dd if=image.img of=/dev/mmcblk0 bs=4M status=progress"
+        notes: "Requires unmounting SD card first"
+      - method: balena-etcher
+        tool: "Balena Etcher"
+        notes: "User-friendly, validates writes"
+    boot_modes:
+      - sd_card
+      - usb_mass_storage
+      - network_pxe
+    connections:
+      - type: hdmi
+        count: 2
+      - type: usb_c
+        purpose: power
+      - type: usb_a
+        count: 4
+      - type: ethernet
+        count: 1
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "Raspberry Pi OS (32-bit)"
+      - "Raspberry Pi OS (64-bit)"
+      - "Ubuntu Server 22.04 ARM64"
+      - "Ubuntu Desktop 22.04 ARM64"
+      - "DietPi"
+      - "Manjaro ARM"
+      - "Fedora ARM"
+    recovery:
+      serial_console: true
+      jtag: false
+      factory_reset: true
+      reset_pins: "Run pin to GND on boot"
+
+  rpi5:
+    id: rpi5
+    name: "Raspberry Pi 5"
+    manufacturer: "Raspberry Pi Foundation"
+    type: sbc
+    category: fit_for_purpose
+    description: "Next-generation Raspberry Pi with significant performance improvements"
+    capabilities:
+      - reflashable
+      - bootable
+      - usb_boot
+      - network_boot
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - pcie
+      - 4gb
+      - 8gb
+    specifications:
+      cpu: "Broadcom BCM2712, Quad core Cortex-A76 (ARM v8.2-A) 64-bit @ 2.4GHz"
+      ram: "4GB or 8GB LPDDR4X-4267"
+      storage: "MicroSD (primary), USB 3.0, PCIe (via HAT)"
+      usb_ports: 2x USB 3.0, 2x USB 2.0
+      network: "Gigabit Ethernet, 2.4GHz/5.0GHz WiFi 6, Bluetooth 5.2"
+      gpu: "VideoCore VII @ 800MHz"
+      power: "USB-C, 5V/5A"
+    reflash_methods:
+      - method: raspberrypi-imager
+      - method: dd
+      - method: balena-etcher
+    boot_modes:
+      - sd_card
+      - usb_mass_storage
+      - network_pxe
+    connections:
+      - type: hdmi
+        count: 2
+        version: "2.1 (4K@60Hz)"
+      - type: usb_c
+        purpose: power
+      - type: usb_a
+        count: 4
+      - type: ethernet
+        count: 1
+      - type: gpio
+        count: 40
+      - type: pcie
+        count: 1
+        notes: "Via PCIe HAT accessory"
+    known_good_os:
+      - "Raspberry Pi OS (64-bit)"
+      - "Ubuntu Server 24.04 ARM64"
+      - "DietPi"
+    recovery:
+      serial_console: true
+      jtag: false
+
+  rpi3bplus:
+    id: rpi3bplus
+    name: "Raspberry Pi 3 Model B+"
+    manufacturer: "Raspberry Pi Foundation"
+    type: sbc
+    category: legacy
+    description: "Popular SBC, widely used in embedded projects"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm32
+      - armv7
+      - 1gb
+    specifications:
+      cpu: "Broadcom BCM2837B0, Quad core Cortex-A53 (ARM v8) 64-bit @ 1.4GHz"
+      ram: "1GB LPDDR2"
+      storage: "MicroSD"
+      usb_ports: 4x USB 2.0
+      network: "Gigabit Ethernet, 2.4GHz WiFi, Bluetooth 4.2"
+      gpu: "VideoCore IV"
+      power: "Micro-USB, 5V/2.5A"
+    reflash_methods:
+      - method: raspberrypi-imager
+      - method: dd
+    boot_modes:
+      - sd_card
+    connections:
+      - type: hdmi
+        count: 1
+      - type: usb_micro
+        purpose: power
+      - type: usb_a
+        count: 4
+      - type: ethernet
+        count: 1
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "Raspberry Pi OS (32-bit)"
+      - "Raspbian"
+      - "Ubuntu Server 18.04 ARM"
+      - "DietPi"
+    recovery:
+      serial_console: true
+
+  # ---- NVIDIA Jetson Series ----
+  jetson-nano:
+    id: jetson-nano
+    name: "NVIDIA Jetson Nano"
+    manufacturer: "NVIDIA"
+    type: ai_computer
+    category: fit_for_purpose
+    description: "AI computing board for embedded applications"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+      - camera
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - cuda
+      - ai
+      - 4gb
+    specifications:
+      cpu: "Quad-core ARM A57 @ 1.43GHz"
+      ram: "4GB LPDDR4"
+      storage: "MicroSD (primary), eMMC (optional)"
+      gpu: "128-core Maxwell GPU"
+      cuda_cores: 128
+      network: "Gigabit Ethernet, 802.11ac WiFi, Bluetooth 4.1"
+      power: "Micro-USB, 5V/4A or Barrel jack, 5V/4A"
+      camera: "MIPI CSI-2 (2 lanes)"
+    reflash_methods:
+      - method: nvidia-sdkmanager
+        tool: "NVIDIA SDK Manager"
+        notes: "Official tool for Jetson devices"
+      - method: jetson-flash
+        tool: "jetson-flash.sh"
+        notes: "Command-line flashing tool"
+      - method: dd
+        notes: "For custom images"
+    boot_modes:
+      - sd_card
+      - emmc
+    connections:
+      - type: hdmi
+        count: 1
+      - type: display_port
+        count: 1
+      - type: usb_micro
+        purpose: power
+      - type: usb_a
+        count: 4
+        version: "3.0"
+      - type: ethernet
+        count: 1
+      - type: gpio
+        count: 40
+      - type: camera
+        count: 1
+    known_good_os:
+      - "JetPack 4.6"
+      - "JetPack 5.1"
+      - "Ubuntu 20.04 ARM64"
+      - "L4T (Linux for Tegra)"
+    recovery:
+      serial_console: true
+      jtag: true
+      factory_reset: true
+      reset_button: true
+
+  jetson-orin-nano:
+    id: jetson-orin-nano
+    name: "NVIDIA Jetson Orin Nano"
+    manufacturer: "NVIDIA"
+    type: ai_computer
+    category: fit_for_purpose
+    description: "Compact AI supercomputer for edge applications"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - camera
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8.2
+      - cuda
+      - ai
+      - 8gb
+    specifications:
+      cpu: "6-core ARM Cortex-A78AE v8.2 64-bit @ 2.0GHz"
+      ram: "8GB LPDDR5"
+      storage: "NVMe (primary), MicroSD (optional)"
+      gpu: "1024-core Ampere GPU"
+      cuda_cores: 1024
+      tensor_cores: 32
+      network: "Gigabit Ethernet, 802.11ac WiFi, Bluetooth 5.0"
+      power: "Barrel jack, 10V-20V"
+      camera: "MIPI CSI-2 (4 lanes)"
+    reflash_methods:
+      - method: nvidia-sdkmanager
+      - method: jetson-flash
+    boot_modes:
+      - nvme
+      - sd_card
+    connections:
+      - type: hdmi
+        count: 1
+        version: "2.0"
+      - type: display_port
+        count: 1
+      - type: ethernet
+        count: 1
+      - type: usb_c
+        count: 2
+        version: "3.2"
+      - type: usb_a
+        count: 2
+        version: "2.0"
+      - type: camera
+        count: 2
+    known_good_os:
+      - "JetPack 6.0"
+      - "Ubuntu 22.04 ARM64"
+      - "L4T"
+    recovery:
+      serial_console: true
+      jtag: true
+
+  # ---- ASUS Tinker Board ----
+  asus-tinker-board:
+    id: asus-tinker-board
+    name: "ASUS Tinker Board"
+    manufacturer: "ASUS"
+    type: sbc
+    category: fit_for_purpose
+    description: "High-performance SBC with RK3288 SoC"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm32
+      - armv7
+      - rockchip
+      - 2gb
+    specifications:
+      cpu: "Rockchip RK3288, Quad-core Cortex-A17 @ 1.8GHz"
+      ram: "2GB LPDDR3"
+      storage: "MicroSD (primary), eMMC (optional)"
+      gpu: "ARM Mali-T764"
+      network: "Gigabit Ethernet, 802.11 b/g/n WiFi, Bluetooth 4.0"
+      power: "Barrel jack, 5V/2A or 19V/3.42A"
+    reflash_methods:
+      - method: tinker-os-imager
+        tool: "ASUS TinkerOS Imager"
+      - method: dd
+    boot_modes:
+      - sd_card
+      - emmc
+    connections:
+      - type: hdmi
+        count: 1
+        version: "1.4 (4K@30Hz)"
+      - type: ethernet
+        count: 1
+      - type: usb_a
+        count: 4
+        version: "2.0"
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "TinkerOS (Debian-based)"
+      - "Armbian"
+      - "Ubuntu"
+      - "Volumio"
+    recovery:
+      serial_console: true
+
+  # ---- Orange Pi Series ----
+  orange-pi-5:
+    id: orange-pi-5
+    name: "Orange Pi 5"
+    manufacturer: "Xunlong Software"
+    type: sbc
+    category: experimental
+    description: "High-performance SBC with Rockchip RK3588S"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - rockchip
+      - 8gb
+      - 16gb
+      - pcie
+    specifications:
+      cpu: "Rockchip RK3588S, Octa-core (4x Cortex-A76 + 4x Cortex-A55) @ 2.4GHz"
+      ram: "8GB, 16GB, or 32GB LPDDR4/4X/5"
+      storage: "MicroSD, NVMe (via PCIe), SATA (via PCIe)"
+      gpu: "ARM Mali-G610 MP4"
+      network: "2.5G Ethernet, WiFi 6, Bluetooth 5.2"
+      power: "USB-C PD, 5V/5A or 12V/3A"
+    reflash_methods:
+      - method: orange-pi-imager
+      - method: dd
+    boot_modes:
+      - sd_card
+      - nvme
+      - sata
+    connections:
+      - type: hdmi
+        count: 2
+        version: "2.1"
+      - type: display_port
+        count: 1
+      - type: ethernet
+        count: 2
+      - type: usb_c
+        count: 1
+        purpose: power
+      - type: usb_a
+        count: 4
+        version: "3.0"
+      - type: pcie
+        count: 1
+        version: "2.1"
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "Orange Pi OS (Debian-based)"
+      - "Armbian"
+      - "Ubuntu 22.04 ARM64"
+    recovery:
+      serial_console: true
+      reset_button: true
+
+  # ---- Odroid Series ----
+  odroid-n2plus:
+    id: odroid-n2plus
+    name: "ODROID-N2+"
+    manufacturer: "Hardkernel"
+    type: sbc
+    category: fit_for_purpose
+    description: "Powerful SBC with Amlogic S922X"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - ethernet
+      - gpu
+      - audio
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - amlogic
+      - 4gb
+    specifications:
+      cpu: "Amlogic S922X, Hexa-core (4x Cortex-A73 + 2x Cortex-A53) @ 2.4GHz"
+      ram: "4GB DDR4"
+      storage: "eMMC (primary), MicroSD, SATA"
+      gpu: "Mali-G52 MP6 (Bifrost)"
+      network: "Gigabit Ethernet"
+      power: "Barrel jack, 12V/2A"
+    reflash_methods:
+      - method: odroid-imager
+      - method: dd
+    boot_modes:
+      - emmc
+      - sd_card
+      - sata
+    connections:
+      - type: hdmi
+        count: 1
+        version: "2.1 (4K@60Hz)"
+      - type: ethernet
+        count: 1
+      - type: usb_a
+        count: 4
+        version: "3.0"
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "Ubuntu 22.04 ARM64"
+      - "Armbian"
+      - "CoreELEC"
+      - "LibreELEC"
+    recovery:
+      serial_console: true
+      reset_button: true
+
+  # ---- BeagleBone ----
+  beaglebone-black:
+    id: beaglebone-black
+    name: "BeagleBone Black"
+    manufacturer: "BeagleBoard.org"
+    type: sbc
+    category: legacy
+    description: "Open-source hardware SBC for makers"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - ethernet
+      - gpu
+      - audio
+      - serial
+      - spi
+      - i2c
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm32
+      - armv7
+      - ti
+      - 512mb
+      - pru
+    specifications:
+      cpu: "TI AM3358, Single-core Cortex-A8 @ 1GHz"
+      ram: "512MB DDR3"
+      storage: "eMMC (4GB), MicroSD"
+      gpu: "SGX530"
+      network: "10/100 Ethernet"
+      power: "Barrel jack, 5V"
+      pru: "2x PRU 32-bit microcontrollers"
+    reflash_methods:
+      - method: beagle-flasher
+      - method: dd
+    boot_modes:
+      - emmc
+      - sd_card
+    connections:
+      - type: hdmi
+        count: 1
+        version: "1.3"
+      - type: ethernet
+        count: 1
+      - type: usb_a
+        count: 1
+        version: "2.0"
+      - type: usb_otg
+        count: 1
+      - type: gpio
+        count: 92
+      - type: serial
+        count: 6
+      - type: spi
+        count: 2
+      - type: i2c
+        count: 3
+    known_good_os:
+      - "Debian (BeagleBoard.org)"
+      - "Ubuntu ARM"
+      - "Ångström"
+      - "Buildroot"
+    recovery:
+      serial_console: true
+      reset_button: true
+
+  # ---- RockPro64 ----
+  rockpro64:
+    id: rockpro64
+    name: "RockPro64"
+    manufacturer: "Pine64"
+    type: sbc
+    category: fit_for_purpose
+    description: "High-performance SBC with Rockchip RK3399"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - headless
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+      - pcie
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - arm64
+      - armv8
+      - rockchip
+      - 4gb
+      - pcie
+    specifications:
+      cpu: "Rockchip RK3399, Dual-core Cortex-A72 + Quad-core Cortex-A53 @ 1.5GHz"
+      ram: "2GB or 4GB LPDDR4"
+      storage: "eMMC (16GB/32GB), MicroSD, SATA, NVMe"
+      gpu: "Mali-T860 MP4"
+      network: "Gigabit Ethernet, 802.11ac WiFi, Bluetooth 5.0"
+      power: "Barrel jack, 12V/3A or 5V/3A"
+    reflash_methods:
+      - method: ayufan-images
+        tool: "Ayufan RockPro64 images"
+      - method: dd
+    boot_modes:
+      - emmc
+      - sd_card
+      - nvme
+      - sata
+    connections:
+      - type: hdmi
+        count: 1
+        version: "2.0 (4K@60Hz)"
+      - type: display_port
+        count: 1
+      - type: ethernet
+        count: 1
+      - type: usb_c
+        count: 1
+        version: "3.0"
+      - type: usb_a
+        count: 2
+        version: "3.0"
+      - type: pcie
+        count: 1
+        version: "2.1"
+      - type: gpio
+        count: 40
+    known_good_os:
+      - "Manjaro ARM"
+      - "Debian"
+      - "Ubuntu"
+      - "Armbian"
+    recovery:
+      serial_console: true
+      reset_button: true
+
+  # ---- Laptop/Desktop Form Factors ----
+  framework-laptop:
+    id: framework-laptop
+    name: "Framework Laptop"
+    manufacturer: "Framework Computer"
+    type: laptop
+    category: experimental
+    description: "Modular, repairable, upgradable laptop"
+    capabilities:
+      - reflashable
+      - bootable
+      - storage
+      - compute
+      - wifi
+      - bluetooth
+      - ethernet
+      - gpu
+      - audio
+      - touchscreen
+      - webcam
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - x86_64
+      - modular
+      - 8gb
+      - 16gb
+      - 32gb
+    specifications:
+      cpu: "Intel Core i5-1240P / i7-1260P / i7-1280P / AMD Ryzen 7 7840U"
+      ram: "Upgradable (8GB, 16GB, 32GB, 64GB) DDR4/DDR5"
+      storage: "Upgradable NVMe (2x M.2 slots)"
+      gpu: "Intel Iris Xe (96EU) / Radeon 780M"
+      network: "WiFi 6E, Bluetooth 5.2, 2.5G Ethernet (module)"
+      display: '13.5" 3:2 2256x1504 IPS'
+      power: '61Wh battery, USB-C PD'
+      ports: '4x USB-C (2x USB4, 2x USB 3.2), HDMI 2.0, DisplayPort 1.4'
+    reflash_methods:
+      - method: firmware-utility
+        tool: "Framework Firmware Utility"
+      - method: live_usb
+        tool: "Any Linux live USB"
+      - method: ventoy
+        tool: "Ventoy"
+    boot_modes:
+      - internal_ssd
+      - usb
+      - pxe
+    connections:
+      - type: usb_c
+        count: 4
+      - type: hdmi
+        count: 1
+      - type: display_port
+        count: 1
+      - type: ethernet
+        count: 1
+        notes: "Via expansion module"
+      - type: webcam
+        count: 1
+    known_good_os:
+      - "Windows 11"
+      - "Ubuntu 22.04"
+      - "Fedora 39"
+      - "Arch Linux"
+      - "NixOS"
+      - "ChromeOS"
+      - "Qubes OS (experimental)"
+    recovery:
+      serial_console: false
+      ec_firmware: true
+      reset_combo: "Power + Volume Up"
+
+  # ---- Servers ----
+  dell-poweredge-t30:
+    id: dell-poweredge-t30
+    name: "Dell PowerEdge T30"
+    manufacturer: "Dell"
+    type: server
+    category: fit_for_purpose
+    description: "Entry-level tower server for small businesses"
+    capabilities:
+      - bootable
+      - storage
+      - compute
+      - headless
+      - ethernet
+      - gpu
+      - audio
+      - ipmi
+    firmware_version: "latest"
+    last_updated: "2025-01-19"
+    tags:
+      - x86_64
+      - xeon
+      - ipmi
+      - rackmount
+    specifications:
+      cpu: "Intel Xeon E3-1225 v5 / E3-1275 v5"
+      ram: "Up to 64GB DDR4 ECC UDIMM"
+      storage: '4x 3.5" SATA HDD/SSD, 1x M.2'
+      gpu: "Integrated Intel HD Graphics P530"
+      network: "Dual Gigabit Ethernet"
+      power: "350W PSU"
+      form_factor: "Tower (5U)"
+      expansion: "2x PCIe 3.0 x4, 1x PCIe 3.0 x16"
+    reflash_methods:
+      - method: dell-lifecycle-controller
+        tool: "Dell iDRAC/Lifecycle Controller"
+      - method: live_usb
+      - method: ipmi
+        tool: "IPMItool"
+    boot_modes:
+      - internal_hdd
+      - usb
+      - pxe
+      - optical
+    connections:
+      - type: ethernet
+        count: 2
+      - type: usb_a
+        count: 6
+        version: "3.0"
+      - type: vga
+        count: 1
+      - type: display_port
+        count: 1
+      - type: serial
+        count: 1
+    known_good_os:
+      - "Ubuntu Server LTS"
+      - "Debian"
+      - "CentOS Stream"
+      - "Rocky Linux"
+      - "AlmaLinux"
+      - "Proxmox VE"
+      - "TrueNAS"
+      - "ESXi"
+    recovery:
+      serial_console: true
+      ipmi: true
+      idrac: true
+      reset_button: true
+
+# ============================================
+# Custom Device Template
+# ============================================
+# To add a custom device, create a YAML file in the custom/ directory
+# or add it directly to this file under the 'devices' key.
+# 
+# Required fields:
+#   id: Unique identifier (lowercase, hyphen-separated)
+#   name: Human-readable name
+#   manufacturer: Manufacturer name
+#   type: One of: sbc, ai_computer, laptop, desktop, server, other
+#   category: One of: fit_for_purpose, experimental, legacy, unsupported
+#   description: Brief description
+#   capabilities: List of capabilities from the classifications above
+#
+# Example minimal entry:
+# custom-device:
+#   id: custom-device
+#   name: "My Custom Device"
+#   manufacturer: "My Company"
+#   type: sbc
+#   category: experimental
+#   description: "My custom SBC"
+#   capabilities:
+#     - reflashable
+#     - storage
