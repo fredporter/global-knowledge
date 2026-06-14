@@ -25,9 +25,10 @@ from datetime import datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 PUBLIC_DIR = Path(os.path.expanduser("~/Public"))
-SITE_DIR = PUBLIC_DIR / "_site"
+VAULT_DIR = PUBLIC_DIR / "global-vault"
+SITE_DIR = PUBLIC_DIR / "global-vault" / "_site"
 CONTENT_DIRS = ["knowledge", "concepts", "learning", "surfaces", "standards", "adaptors"]
-INDEX_FILE = PUBLIC_DIR / "knowledge" / "_index.json"
+INDEX_FILE = VAULT_DIR / "knowledge" / "_index.json"
 
 # ── helpers ──────────────────────────────────────────────────────────
 
@@ -137,11 +138,11 @@ def build_nav():
     """Build navigation structure from directory listing."""
     nav = []
     for d in CONTENT_DIRS:
-        dir_path = PUBLIC_DIR / d
+        dir_path = VAULT_DIR / d
         if dir_path.exists():
             items = []
             for f in sorted(dir_path.rglob("*.md")):
-                rel = f.relative_to(PUBLIC_DIR)
+                rel = f.relative_to(VAULT_DIR)
                 url = f"/{rel.with_suffix('.html')}"
                 fm, _ = read_frontmatter(f)
                 title = fm.get("title", f.stem.replace("-", " ").title())
@@ -235,7 +236,7 @@ def cmd_build():
     total = 0
     for section in nav:
         for item in section["items"]:
-            src_path = PUBLIC_DIR / item["path"]
+            src_path = VAULT_DIR / item["path"]
             fm, body = read_frontmatter(src_path)
             title = fm.get("title", item["title"])
             description = fm.get("summary", "")[:200]
@@ -390,15 +391,15 @@ def cmd_deploy():
     cmd_build()
     # Use git worktree to push _site/ to gh-pages
     result = subprocess.run(
-        ["git", "worktree", "add", "--detach", str(PUBLIC_DIR / "_ghpages")],
-        cwd=str(PUBLIC_DIR), capture_output=True, text=True
+        ["git", "worktree", "add", "--detach", str(VAULT_DIR / "_ghpages")],
+        cwd=str(VAULT_DIR), capture_output=True, text=True
     )
     if result.returncode != 0 and "already exists" not in result.stderr:
         print(f"⚠️  Could not create worktree: {result.stderr}")
         return
 
     # Copy _site/ into worktree
-    gh_pages = PUBLIC_DIR / "_ghpages"
+    gh_pages = VAULT_DIR / "_ghpages"
     for item in gh_pages.iterdir():
         if item.name != ".git":
             shutil.rmtree(item, ignore_errors=True)
@@ -420,7 +421,7 @@ def cmd_deploy():
     )
     # Cleanup
     shutil.rmtree(gh_pages, ignore_errors=True)
-    subprocess.run(["git", "worktree", "prune"], cwd=str(PUBLIC_DIR), capture_output=True)
+    subprocess.run(["git", "worktree", "prune"], cwd=str(VAULT_DIR), capture_output=True)
     print("✅ Deployed to gh-pages branch")
 
 # ── main ─────────────────────────────────────────────────────────────
