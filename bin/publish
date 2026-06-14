@@ -1,0 +1,443 @@
+#!/usr/bin/env python3
+"""
+publish — Local static site generator for ~/Public/ knowledge library.
+
+uCode2 local publishing model:
+  - Prose-only: no images, no embeds
+  - Focus on: links, frontmatter, useful nav, proper tagging
+  - Output: clean HTML with category/tag browsing, search, and sitemap
+  - Optional: push to GitHub Pages as online mirror
+
+Usage:
+  ./bin/publish build          Build static site to ~/Public/_site/
+  ./bin/publish serve          Serve locally on port 8080
+  ./bin/publish deploy         Push _site/ to gh-pages branch (GitHub Pages mirror)
+"""
+
+import os
+import sys
+import json
+import shutil
+import subprocess
+import re
+from pathlib import Path
+from datetime import datetime
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+PUBLIC_DIR = Path(os.path.expanduser("~/Public"))
+SITE_DIR = PUBLIC_DIR / "_site"
+CONTENT_DIRS = ["knowledge", "concepts", "learning", "surfaces", "standards", "adaptors"]
+INDEX_FILE = PUBLIC_DIR / "knowledge" / "_index.json"
+
+# ── helpers ──────────────────────────────────────────────────────────
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+def read_frontmatter(path):
+    """Extract YAML-like frontmatter and body from a markdown file."""
+    content = path.read_text(encoding="utf-8", errors="replace")
+    fm = {}
+    body = content
+    if content.startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            fm_text = parts[1].strip()
+            body = parts[2].strip()
+            for line in fm_text.split("\n"):
+                line = line.strip()
+                if ":" in line:
+                    key, _, val = line.partition(":")
+                    key = key.strip()
+                    val = val.strip().strip('"').strip("'")
+                    # Handle lists like tags: [a, b, c]
+                    if val.startswith("[") and val.endswith("]"):
+                        val = [v.strip().strip('"').strip("'") for v in val[1:-1].split(",")]
+                    fm[key] = val
+    return fm, body
+
+def render_markdown_to_html(md_text):
+    """Simple markdown-to-HTML renderer (no images, no embeds)."""
+    html = []
+    in_code = False
+    in_list = False
+    for line in md_text.split("\n"):
+        # Code blocks
+        if line.startswith("```"):
+            if in_code:
+                html.append("</code></pre>")
+                in_code = False
+            else:
+                html.append("<pre><code>")
+                in_code = True
+            continue
+        if in_code:
+            html.append(line.replace("<", "<").replace(">", ">"))
+            continue
+
+        # Skip image lines
+        if "![" in line:
+            continue
+
+        # Headings
+        if line.startswith("###### "):
+            html.append(f"<h6>{line[7:]}</h6>")
+        elif line.startswith("##### "):
+            html.append(f"<h5>{line[6:]}</h5>")
+        elif line.startswith("#### "):
+            html.append(f"<h4>{line[5:]}</h4>")
+        elif line.startswith("### "):
+            html.append(f"<h3>{line[4:]}</h3>")
+        elif line.startswith("## "):
+            html.append(f"<h2>{line[3:]}</h2>")
+        elif line.startswith("# "):
+            html.append(f"<h1>{line[2:]}</h1>")
+        # Horizontal rule
+        elif line.strip() in ("---", "***", "___"):
+            html.append("<hr>")
+        # Unordered list
+        elif line.strip().startswith("- ") or line.strip().startswith("* "):
+            if not in_list:
+                html.append("<ul>")
+                in_list = True
+            html.append(f"<li>{line.strip()[2:]}</li>")
+        elif in_list and line.strip() == "":
+            html.append("</ul>")
+            in_list = False
+        elif in_list:
+            html.append("</ul>")
+            in_list = False
+            html.append(f"<p>{line}</p>")
+        # Blockquote
+        elif line.startswith("> "):
+            html.append(f"<blockquote>{line[2:]}</blockquote>")
+        # Empty line
+        elif line.strip() == "":
+            if in_list:
+                html.append("</ul>")
+                in_list = False
+            html.append("")
+        # Paragraph
+        else:
+            # Convert inline formatting
+            line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            line = re.sub(r'\*(.+?)\*', r'<em>\1</em>', line)
+            line = re.sub(r'`(.+?)`', r'<code>\1</code>', line)
+            # Convert links (no images)
+            line = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', line)
+            html.append(f"<p>{line}</p>")
+
+    if in_code:
+        html.append("</code></pre>")
+    if in_list:
+        html.append("</ul>")
+    return "\n".join(html)
+
+def build_nav():
+    """Build navigation structure from directory listing."""
+    nav = []
+    for d in CONTENT_DIRS:
+        dir_path = PUBLIC_DIR / d
+        if dir_path.exists():
+            items = []
+            for f in sorted(dir_path.rglob("*.md")):
+                rel = f.relative_to(PUBLIC_DIR)
+                url = f"/{rel.with_suffix('.html')}"
+                fm, _ = read_frontmatter(f)
+                title = fm.get("title", f.stem.replace("-", " ").title())
+                tags = fm.get("tags", [])
+                if isinstance(tags, str):
+                    tags = [tags]
+                items.append({"title": title, "url": url, "tags": tags, "path": str(rel)})
+            nav.append({"section": d, "items": items})
+    return nav
+
+def build_tag_index(nav):
+    """Build a tag -> [pages] index."""
+    tags = {}
+    for section in nav:
+        for item in section["items"]:
+            for tag in item["tags"]:
+                tag = tag.lower().strip()
+                if tag not in tags:
+                    tags[tag] = []
+                tags[tag].append(item)
+    return dict(sorted(tags.items()))
+
+# ── templates ────────────────────────────────────────────────────────
+
+HTML_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title} — Knowledge Library</title>
+<meta name="description" content="{description}">
+<meta name="tags" content="{meta_tags}">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/" class="logo">📚 Knowledge Library</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/tags.html">Tags</a>
+    <a href="/sitemap.html">Sitemap</a>
+  </div>
+</nav>
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Sections</h3>
+    <ul>
+{sidebar_links}
+    </ul>
+  </aside>
+  <main class="content">
+{content}
+  </main>
+</div>
+<footer>
+  <p>Knowledge Library — uCode2 Local Publishing · Generated {date}</p>
+</footer>
+</body>
+</html>"""
+
+def render_page(title, content, sidebar_links, description="", meta_tags=""):
+    return HTML_TEMPLATE.format(
+        title=title,
+        description=description,
+        meta_tags=meta_tags,
+        sidebar_links=sidebar_links,
+        content=content,
+        date=datetime.now().strftime("%Y-%m-%d %H:%M"),
+    )
+
+# ── build ────────────────────────────────────────────────────────────
+
+def cmd_build():
+    print("📚 Building Knowledge Library...")
+    if SITE_DIR.exists():
+        shutil.rmtree(SITE_DIR)
+    SITE_DIR.mkdir(parents=True)
+
+    nav = build_nav()
+    tag_index = build_tag_index(nav)
+
+    # Build sidebar HTML
+    sidebar_parts = []
+    for section in nav:
+        sidebar_parts.append(f'<li class="section-label">{section["section"]}</li>')
+        for item in section["items"]:
+            sidebar_parts.append(f'<li><a href="{item["url"]}">{item["title"]}</a></li>')
+    sidebar_html = "\n".join(sidebar_parts)
+
+    # Build each page
+    total = 0
+    for section in nav:
+        for item in section["items"]:
+            src_path = PUBLIC_DIR / item["path"]
+            fm, body = read_frontmatter(src_path)
+            title = fm.get("title", item["title"])
+            description = fm.get("summary", "")[:200]
+            tags = fm.get("tags", [])
+            if isinstance(tags, str):
+                tags = [tags]
+            meta_tags = ", ".join(tags) if tags else ""
+
+            # Add tag badges
+            tag_badges = ""
+            if tags:
+                tag_badges = '<div class="tags">' + "".join(
+                    f'<a href="/tags.html#{slugify(t)}" class="tag">{t}</a>' for t in tags
+                ) + "</div>"
+
+            content_html = render_markdown_to_html(body)
+            full_content = f"<h1>{title}</h1>\n{tag_badges}\n{content_html}"
+
+            html = render_page(title, full_content, sidebar_html, description, meta_tags)
+
+            # Write to _site preserving directory structure
+            out_path = SITE_DIR / item["path"].replace(".md", ".html")
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(html)
+            total += 1
+
+    # Build index page
+    index_content = ["<h1>Knowledge Library</h1>",
+                     "<p>Local reference library — prose-only, no images, no embeds.</p>",
+                     "<hr>",
+                     '<div class="section-grid">']
+    for section in nav:
+        count = len(section["items"])
+        index_content.append(
+            f'<div class="section-card">'
+            f'<h2><a href="/{section["section"]}/index.html">{section["section"]}</a></h2>'
+            f'<p>{count} articles</p>'
+            f'</div>'
+        )
+        # Generate section index
+        section_items = "".join(
+            f'<li><a href="{i["url"]}">{i["title"]}</a></li>' for i in section["items"]
+        )
+        section_html = render_page(
+            f"Section: {section['section']}",
+            f"<h1>{section['section']}</h1><ul>{section_items}</ul>",
+            sidebar_html
+        )
+        sec_dir = SITE_DIR / section["section"]
+        sec_dir.mkdir(parents=True, exist_ok=True)
+        (sec_dir / "index.html").write_text(section_html)
+
+    index_content.append("</div>")
+    index_html = render_page("Home", "\n".join(index_content), sidebar_html)
+    (SITE_DIR / "index.html").write_text(index_html)
+
+    # Build tags page
+    tag_items = []
+    for tag, pages in tag_index.items():
+        tag_items.append(f'<h2 id="{slugify(tag)}">{tag}</h2><ul>')
+        for p in pages:
+            tag_items.append(f'<li><a href="{p["url"]}">{p["title"]}</a></li>')
+        tag_items.append("</ul>")
+    tags_html = render_page("Tags", "<h1>Tags</h1>\n" + "\n".join(tag_items), sidebar_html)
+    (SITE_DIR / "tags.html").write_text(tags_html)
+
+    # Build sitemap
+    sitemap_items = []
+    for section in nav:
+        sitemap_items.append(f'<h2>{section["section"]}</h2><ul>')
+        for item in section["items"]:
+            tag_str = ", ".join(item["tags"]) if item["tags"] else ""
+            sitemap_items.append(f'<li><a href="{item["url"]}">{item["title"]}</a> <span class="tag-list">{tag_str}</span></li>')
+        sitemap_items.append("</ul>")
+    sitemap_html = render_page("Sitemap", "<h1>Sitemap</h1>\n" + "\n".join(sitemap_items), sidebar_html)
+    (SITE_DIR / "sitemap.html").write_text(sitemap_html)
+
+    # Write CSS
+    css = """/* Knowledge Library — uCode2 Local Publishing */
+:root {
+  --bg: #faf9f8;
+  --fg: #1a1a1a;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --border: #e5e7eb;
+  --sidebar-bg: #f3f4f6;
+  --tag-bg: #e0e7ff;
+  --tag-fg: #4338ca;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.top-nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.top-nav .logo { font-size: 1.2rem; font-weight: 700; color: var(--fg); }
+.top-nav .nav-links { display: flex; gap: 1.5rem; }
+.layout { display: flex; max-width: 1400px; margin: 0 auto; min-height: calc(100vh - 120px); }
+.sidebar { width: 260px; flex-shrink: 0; padding: 1.5rem; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; max-height: calc(100vh - 60px); position: sticky; top: 60px; }
+.sidebar h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.75rem; }
+.sidebar ul { list-style: none; margin-bottom: 1.5rem; }
+.sidebar li { margin-bottom: 0.25rem; }
+.sidebar li.section-label { font-size: 0.8rem; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.75rem; margin-bottom: 0.25rem; }
+.sidebar a { font-size: 0.9rem; display: block; padding: 0.15rem 0; }
+.content { flex: 1; padding: 2rem 3rem; max-width: 900px; }
+.content h1 { font-size: 2rem; margin-bottom: 1rem; }
+.content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+.content h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.content p { margin-bottom: 1rem; }
+.content ul, .content ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+.content li { margin-bottom: 0.25rem; }
+.content blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; color: #6b7280; margin: 1rem 0; }
+.content pre { background: #1f2937; color: #f3f4f6; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0; font-size: 0.9rem; }
+.content code { background: var(--accent-light); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+.content pre code { background: none; padding: 0; }
+.content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.tags { margin-bottom: 1.5rem; }
+.tag { display: inline-block; background: var(--tag-bg); color: var(--tag-fg); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.4rem; }
+.tag:hover { background: #c7d2fe; text-decoration: none; }
+.tag-list { color: #9ca3af; font-size: 0.85rem; }
+.section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.section-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+.section-card h2 { margin-top: 0; }
+footer { text-align: center; padding: 2rem; color: #9ca3af; font-size: 0.85rem; border-top: 1px solid var(--border); }
+@media (max-width: 768px) { .layout { flex-direction: column; } .sidebar { width: 100%; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); } .content { padding: 1.5rem; } }
+"""
+    (SITE_DIR / "style.css").write_text(css)
+
+    print(f"✅ Built {total} pages → {SITE_DIR}")
+    print(f"   Index:  file://{SITE_DIR}/index.html")
+    print(f"   Tags:   file://{SITE_DIR}/tags.html")
+    print(f"   Sitemap: file://{SITE_DIR}/sitemap.html")
+
+# ── serve ────────────────────────────────────────────────────────────
+
+def cmd_serve():
+    port = int(sys.argv[2]) if len(sys.argv) > 2 else 8080
+    os.chdir(SITE_DIR)
+    server = HTTPServer(("0.0.0.0", port), SimpleHTTPRequestHandler)
+    print(f"🌐 Serving at http://localhost:{port}")
+    print(f"   Press Ctrl+C to stop")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\n👋 Stopped.")
+
+# ── deploy ───────────────────────────────────────────────────────────
+
+def cmd_deploy():
+    """Push _site/ to gh-pages branch as a GitHub Pages mirror."""
+    print("🚀 Deploying to GitHub Pages...")
+    # Build first
+    cmd_build()
+    # Use git worktree to push _site/ to gh-pages
+    result = subprocess.run(
+        ["git", "worktree", "add", "--detach", str(PUBLIC_DIR / "_ghpages")],
+        cwd=str(PUBLIC_DIR), capture_output=True, text=True
+    )
+    if result.returncode != 0 and "already exists" not in result.stderr:
+        print(f"⚠️  Could not create worktree: {result.stderr}")
+        return
+
+    # Copy _site/ into worktree
+    gh_pages = PUBLIC_DIR / "_ghpages"
+    for item in gh_pages.iterdir():
+        if item.name != ".git":
+            shutil.rmtree(item, ignore_errors=True)
+    for item in SITE_DIR.iterdir():
+        if item.is_dir():
+            shutil.copytree(item, gh_pages / item.name, dirs_exist_ok=True)
+        else:
+            shutil.copy2(item, gh_pages / item.name)
+
+    # Commit and push
+    subprocess.run(["git", "add", "-A"], cwd=str(gh_pages), capture_output=True)
+    subprocess.run(
+        ["git", "commit", "-m", f"deploy: update gh-pages {datetime.now().isoformat()}"],
+        cwd=str(gh_pages), capture_output=True
+    )
+    subprocess.run(
+        ["git", "push", "origin", "HEAD:gh-pages", "--force"],
+        cwd=str(gh_pages), capture_output=True
+    )
+    # Cleanup
+    shutil.rmtree(gh_pages, ignore_errors=True)
+    subprocess.run(["git", "worktree", "prune"], cwd=str(PUBLIC_DIR), capture_output=True)
+    print("✅ Deployed to gh-pages branch")
+
+# ── main ─────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print(__doc__)
+        sys.exit(1)
+
+    command = sys.argv[1]
+    if command == "build":
+        cmd_build()
+    elif command == "serve":
+        cmd_serve()
+    elif command == "deploy":
+        cmd_deploy()
+    else:
+        print(f"Unknown command: {command}")
+        print(__doc__)
+        sys.exit(1)
