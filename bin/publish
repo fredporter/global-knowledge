@@ -25,10 +25,10 @@ from datetime import datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 PUBLIC_DIR = Path(os.path.expanduser("~/Public"))
-VAULT_DIR = PUBLIC_DIR / "global-vault"
-SITE_DIR = PUBLIC_DIR / "global-vault" / "_site"
-CONTENT_DIRS = ["knowledge", "concepts", "learning", "surfaces", "standards", "adaptors"]
-INDEX_FILE = VAULT_DIR / "knowledge" / "_index.json"
+VAULT_DIR = PUBLIC_DIR / "global-knowledge"
+SITE_DIR = PUBLIC_DIR / "global-knowledge" / "_site"
+CONTENT_DIRS = ["communication", "community", "contributor", "fire", "food", "making", "medical", "navigation", "reference", "shelter", "skills", "survival", "tech", "water", "wellbeing"]
+INDEX_FILE = VAULT_DIR / "_index.json"
 
 # ── helpers ──────────────────────────────────────────────────────────
 

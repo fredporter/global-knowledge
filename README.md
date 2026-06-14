@@ -1,21 +1,23 @@
-# Global Vault
+---
+title: "Migrated knowledge bank (subset)"
+tags: [--contributor]
+audience: contributor
+slot: 7
+---
 
-**Purpose:** Reference knowledge — public domain content, device specs, learning materials.
+# Knowledge bank — migrated subset
 
-**Scope:** macOS → Linux only (read-only on Linux side).
+**Keep-now** files from upstream `uDosDocs/knowledge/bank/` are copied here (metadata + specs):
 
-**Contents:**
-- `knowledge/` — Reference knowledge (survival, navigation, fire, water, tools, etc.)
-- `concepts/` — System concepts and architecture docs
-- `repos/` — Repository documentation (uDevFramework, etc.)
-- `config/` — Configuration references
-- `learning/` — Educational content and tutorials
-- `tools/` — Utility scripts
-- `handoff/` — Handoff data
-- `system/` — System state data
-- `data/` — Structured data (MCP, feeds, spools, workflows)
-- `vault/` — Vault metadata
-- `surfaces/` — Surface definitions
-- `devices/` — Device catalogues and drivers
+- `GEOGRAPHY-KNOWLEDGE-SPEC.md`, `KNOWLEDGE-SYSTEM.md`, `_index.json`, `structure.txt`, `version.json`
+- `bank-README.md` — copy of upstream `README.md` at migration time
 
-**Obsidian Vault:** Open this directory as an Obsidian vault.
+## Archive-first topic trees (Round 2C)
+
+Tactical topic directories (`survival/`, `fire/`, `food/`, etc.) are **not** duplicated in this repo. They are archived under:
+
+**`~/Code/archive/v2-reference/uDosDocs/knowledge/bank/`**
+
+See **`~/Code/archive/v2-reference/uDosDocs/knowledge/bank/README.md`** on disk (also described in [`dev/workflow/uDosDocs-round2b-knowledge-triage.md`](../../../../dev/workflow/uDosDocs-round2b-knowledge-triage.md)).
+
+**Rationale:** large topical volume, mixed A1 relevance; kept offline for reference without bloating the monorepo.
