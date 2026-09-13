@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "USX Universal Design System Standards",
+  "version": "1.0.0",
+  "description": "Canonical universal tokens, colors, typography, spacing, and image presets across all uDos surfaces.",
+  "colors": {
+    "teletext_primary": {
+      "0": { "name": "black", "hex": "#000000", "ansi": 30 },
+      "1": { "name": "red", "hex": "#E6193C", "ansi": 31 },
+      "2": { "name": "green", "hex": "#3FB950", "ansi": 32 },
+      "3": { "name": "yellow", "hex": "#F2CC60", "ansi": 33 },
+      "4": { "name": "blue", "hex": "#58A6FF", "ansi": 34 },
+      "5": { "name": "magenta", "hex": "#BC8CFF", "ansi": 35 },
+      "6": { "name": "cyan", "hex": "#39C5CF", "ansi": 36 },
+      "7": { "name": "white", "hex": "#C9D1D9", "ansi": 37 }
+    },
+    "phosphor_themes": {
+      "green_crt": {
+        "background": "#051005",
+        "foreground": "#33FF33",
+        "dim": "#1B801B",
+        "highlight": "#66FF66"
+      },
+      "amber_crt": {
+        "background": "#140A00",
+        "foreground": "#FFB000",
+        "dim": "#996600",
+        "highlight": "#FFCC33"
+      },
+      "monochrome_paper": {
+        "background": "#F6F8FA",
+        "foreground": "#1F2328",
+        "dim": "#656D76",
+        "highlight": "#0969DA"
+      }
+    },
+    "surfaces": {
+      "dark": {
+        "--usx-color-bg": "#0D1117",
+        "--usx-color-surface": "#161B22",
+        "--usx-color-surface-variant": "#21262D",
+        "--usx-color-border": "#30363D",
+        "--usx-color-text": "#E6EDF3",
+        "--usx-color-text-muted": "#8B949E",
+        "--usx-color-primary": "#58A6FF",
+        "--usx-color-accent": "#2EA043"
+      }
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "48px"
+  },
+  "radius": {
+    "sm": "2px",
+    "md": "4px",
+    "lg": "8px",
+    "full": "9999px"
+  },
+  "image_presets": {
+    "1:1": {
+      "aspect_ratio": "1:1",
+      "roles": ["avatar", "gridcore_tile", "sprite_icon"],
+      "resolutions": [
+        { "width": 16, "height": 16, "usage": "micro_tile" },
+        { "width": 32, "height": 32, "usage": "standard_sprite" },
+        { "width": 64, "height": 64, "usage": "large_glyph" },
+        { "width": 256, "height": 256, "usage": "avatar_standard" },
+        { "width": 512, "height": 512, "usage": "artwork_square" }
+      ]
+    },
+    "4:3": {
+      "aspect_ratio": "4:3",
+      "roles": ["retro_crt", "teletext_mode7_screen", "capsule_viewport"],
+      "resolutions": [
+        { "width": 320, "height": 240, "usage": "lowres_canvas" },
+        { "width": 640, "height": 480, "usage": "standard_crt" },
+        { "width": 1024, "height": 768, "usage": "retro_pc_native" }
+      ]
+    },
+    "16:9": {
+      "aspect_ratio": "16:9",
+      "roles": ["homenest_console_tv", "widescreen_card", "modern_display"],
+      "resolutions": [
+        { "width": 1280, "height": 720, "usage": "720p_card" },
+        { "width": 1920, "height": 1080, "usage": "1080p_console" }
+      ]
+    },
+    "2:1": {
+      "aspect_ratio": "2:1",
+      "roles": ["banner", "hero_header", "status_strip"],
+      "resolutions": [
+        { "width": 1200, "height": 600, "usage": "hero_banner" }
+      ]
+    },
+    "3:4": {
+      "aspect_ratio": "3:4",
+      "roles": ["document_binder", "book_cover", "portrait_manual"],
+      "resolutions": [
+        { "width": 768, "height": 1024, "usage": "binder_cover" }
+      ]
+    }
+  }
+}

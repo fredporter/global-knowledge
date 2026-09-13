@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GridCore Universal Standards",
+  "version": "1.0.0",
+  "description": "Universal characters, sprites, mosaic tiles, glyphs, and spatial mapping standards for GridCore and uCode.",
+  "geometry": {
+    "teletext_screen": {
+      "columns": 40,
+      "rows": 25,
+      "aspect_ratio": "4:3",
+      "char_cell": { "width": 12, "height": 20 }
+    },
+    "tile_dimensions": [
+      { "id": "micro", "size": 8, "usage": "dense_maps" },
+      { "id": "standard", "size": 16, "usage": "retro_gaming_and_nethack" },
+      { "id": "medium", "size": 24, "usage": "teletext_mosaics" },
+      { "id": "large", "size": 32, "usage": "highres_tiles" }
+    ]
+  },
+  "character_sets": {
+    "G0": "Standard alphanumeric ASCII 7-bit character set (0x20 - 0x7E)",
+    "G1_block_mosaics": {
+      "matrix": "2x3 sub-block per character cell",
+      "modes": ["contiguous", "separated"],
+      "bit_mapping": [
+        { "bit": 0, "position": "top-left" },
+        { "bit": 1, "position": "top-right" },
+        { "bit": 2, "position": "middle-left" },
+        { "bit": 3, "position": "middle-right" },
+        { "bit": 4, "position": "bottom-left" },
+        { "bit": 6, "position": "bottom-right" }
+      ]
+    },
+    "control_codes": {
+      "alpha_black": 128,
+      "alpha_red": 129,
+      "alpha_green": 130,
+      "alpha_yellow": 131,
+      "alpha_blue": 132,
+      "alpha_magenta": 133,
+      "alpha_cyan": 134,
+      "alpha_white": 135,
+      "graphics_black": 144,
+      "graphics_red": 145,
+      "graphics_green": 146,
+      "graphics_yellow": 147,
+      "graphics_blue": 148,
+      "graphics_magenta": 149,
+      "graphics_cyan": 150,
+      "graphics_white": 151,
+      "double_height": 141,
+      "normal_height": 140,
+      "hold_graphics": 158,
+      "release_graphics": 159
+    }
+  },
+  "sprite_registry": {
+    "entities": ["player", "companion", "npc", "monster_undead", "monster_beast", "monster_demon"],
+    "items": ["weapon_sword", "weapon_bow", "potion", "scroll", "gold", "food", "key", "capsule_pod"],
+    "terrain": ["floor", "wall", "door_closed", "door_open", "stairs_up", "stairs_down", "water", "lava", "void"]
+  },
+  "spatial_mapping": {
+    "coordinate_hierarchy": [
+      { "level": 0, "name": "universe", "format": "SPACE-[GALAXY]-L[LAYER]" },
+      { "level": 1, "name": "planet", "format": "SPACE-SOL-L[LAYER]" },
+      { "level": 2, "name": "region", "format": "EARTH-[REGION]-L100-[CELL]" },
+      { "level": 3, "name": "city", "format": "EARTH-[REGION]-L100-[CELL1]-[CELL2]" },
+      { "level": 4, "name": "district", "format": "EARTH-[REGION]-L100-[CELL1]-[CELL2]-[CELL3]" },
+      { "level": 5, "name": "location", "format": "EARTH-[REGION]-L100-[...]-[CELL4]" }
+    ]
+  }
+}

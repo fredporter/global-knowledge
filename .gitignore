@@ -5,3 +5,7 @@ _ghpages/
 # macOS defaults
 .DS_Store
 Drop Box/
+
+# Generated exports
+doclang/
+

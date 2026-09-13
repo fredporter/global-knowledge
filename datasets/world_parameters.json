@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal World, Planetary, and Metric Parameters",
+  "version": "1.0.0",
+  "description": "Standard offline reference parameters for world coordinates, planetary dimensions, and measurement metrics.",
+  "earth_metrics": {
+    "equatorial_radius_km": 6378.137,
+    "polar_radius_km": 6356.752,
+    "mean_radius_km": 6371.0,
+    "circumference_equator_km": 40075.017,
+    "surface_area_sq_km": 510072000,
+    "mass_kg": "5.9722e24",
+    "standard_gravity_m_s2": 9.80665,
+    "escape_velocity_km_s": 11.186,
+    "rotation_period_hours": 23.93447
+  },
+  "celestial_parameters": {
+    "solar_system": {
+      "central_body": "Sol",
+      "distance_to_sol_au": 1.0,
+      "distance_to_sol_km": 149597870.7,
+      "light_travel_time_to_earth_sec": 499.0
+    },
+    "planetary_order": [
+      { "name": "Mercury", "type": "terrestrial", "semi_major_axis_au": 0.387 },
+      { "name": "Venus", "type": "terrestrial", "semi_major_axis_au": 0.723 },
+      { "name": "Earth", "type": "terrestrial", "semi_major_axis_au": 1.000 },
+      { "name": "Mars", "type": "terrestrial", "semi_major_axis_au": 1.524 },
+      { "name": "Jupiter", "type": "gas_giant", "semi_major_axis_au": 5.204 },
+      { "name": "Saturn", "type": "gas_giant", "semi_major_axis_au": 9.582 },
+      { "name": "Uranus", "type": "ice_giant", "semi_major_axis_au": 19.201 },
+      { "name": "Neptune", "type": "ice_giant", "semi_major_axis_au": 30.047 }
+    ],
+    "milky_way": {
+      "galaxy_type": "barred_spiral",
+      "diameter_light_years": 100000,
+      "solar_distance_to_core_light_years": 26660,
+      "galactic_orbital_period_million_years": 230
+    }
+  },
+  "measurement_standards": {
+    "length": {
+      "meter_base": 1.0,
+      "kilometer": 1000.0,
+      "centimeter": 0.01,
+      "millimeter": 0.001,
+      "inch_in_meters": 0.0254,
+      "foot_in_meters": 0.3048,
+      "yard_in_meters": 0.9144,
+      "mile_in_meters": 1609.344,
+      "nautical_mile_in_meters": 1852.0
+    },
+    "mass": {
+      "kilogram_base": 1.0,
+      "gram": 0.001,
+      "tonne": 1000.0,
+      "pound_in_kg": 0.45359237,
+      "ounce_in_kg": 0.028349523125
+    },
+    "temperature": {
+      "kelvin_celsius_offset": 273.15,
+      "celsius_to_fahrenheit": "C * 9/5 + 32"
+    }
+  },
+  "time_and_reference": {
+    "utc_offset_seconds_hour": 3600,
+    "seconds_in_day": 86400,
+    "julian_year_days": 365.25
+  }
+}
