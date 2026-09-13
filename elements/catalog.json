@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uDos Curated Standard Element Library",
+  "version": "1.0.0",
+  "description": "Canonical registry of lattice-aligned, curated BOB animations, cards, and dividers.",
+  "categories": {
+    "cards": [
+      {
+        "id": "event_ticket",
+        "name": "Architectural Event Ticket",
+        "aspect_ratio": "4:3",
+        "palette": "architectural_blueprint",
+        "dimensions": { "width": 640, "height": 480 },
+        "lattice_alignment": { "super_cells_w": 26, "super_cells_h": 12 },
+        "description": "Crisp cyan drafting linework on Prussian blue substrate with notch cutout."
+      },
+      {
+        "id": "solstice_invite",
+        "name": "Linocut Solstice Invitation",
+        "aspect_ratio": "4:3",
+        "palette": "editorial_linocut",
+        "dimensions": { "width": 640, "height": 480 },
+        "lattice_alignment": { "super_cells_w": 26, "super_cells_h": 12 },
+        "description": "Woodcut ink and stipple on archival cream paper with classic serifs."
+      },
+      {
+        "id": "ceefax_broadcast",
+        "name": "Ceefax Mode 7 Broadcast Card",
+        "aspect_ratio": "4:3",
+        "palette": "teletext_ceefax",
+        "dimensions": { "width": 480, "height": 500 },
+        "lattice_alignment": { "tall_cols": 40, "tall_rows": 25 },
+        "description": "Canonical 40x25 Teletext Mode 7 broadcast news card."
+      }
+    ],
+    "bobs": [
+      {
+        "id": "tape_reel_spinner",
+        "name": "Magnetic Tape Reel Spinner",
+        "format": "gif",
+        "dimensions": { "width": 64, "height": 64 },
+        "frames": 8,
+        "fps": 12,
+        "palette": "architectural_blueprint",
+        "ram_bytes": 32768,
+        "file_size_kb": 18,
+        "description": "Rotating magnetic tape hub indicating background spool/journal activity."
+      },
+      {
+        "id": "pulsing_radar",
+        "name": "Sovereign Radar Sweep",
+        "format": "gif",
+        "dimensions": { "width": 64, "height": 64 },
+        "frames": 12,
+        "fps": 12,
+        "palette": "green_crt",
+        "ram_bytes": 49152,
+        "file_size_kb": 24,
+        "description": "Phosphor-decay green CRT radar sweep for network discovery and Beacon pings."
+      },
+      {
+        "id": "blinking_cursor",
+        "name": "GridCore Block Cursor",
+        "format": "gif",
+        "dimensions": { "width": 32, "height": 32 },
+        "frames": 2,
+        "fps": 4,
+        "palette": "teletext_ceefax",
+        "ram_bytes": 2048,
+        "file_size_kb": 4,
+        "description": "Square cell blinking block cursor for active command prompts."
+      },
+      {
+        "id": "pixel_sparkle",
+        "name": "Constellation Twinkle Sparkle",
+        "format": "gif",
+        "dimensions": { "width": 32, "height": 32 },
+        "frames": 6,
+        "fps": 8,
+        "palette": "pixel_16",
+        "ram_bytes": 6144,
+        "file_size_kb": 8,
+        "description": "Pixel grid celebration sparkle for completed dispatches and milestones."
+      }
+    ],
+    "dividers": [
+      {
+        "id": "lattice_pulse_line",
+        "name": "Lattice Column Pitch Rule",
+        "dimensions": { "height": 4 },
+        "pitch_px": 24,
+        "palette": "architectural_blueprint",
+        "description": "Horizontal separator aligned to the 24px (6 dot) column pitch."
+      },
+      {
+        "id": "teletext_mosaic_rule",
+        "name": "Sextant Mosaic Rule",
+        "dimensions": { "height": 20 },
+        "pitch_px": 12,
+        "palette": "teletext_ceefax",
+        "description": "Teletext G1 2x3 block mosaic dividing banner."
+      }
+    ]
+  }
+}
