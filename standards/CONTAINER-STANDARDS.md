@@ -20,4 +20,4 @@ Resolve storage roots through owning settings and resource contracts. Do not int
 
 Measure selected files, indexes, assets, dependencies and temporary install space on the actual target. Reserve space for host partitions, rollback and normal operation; available filesystem space differs from advertised disk capacity. Report measured bytes and an explicit safety margin. Historical per-note and device-size estimates are not installation guarantees.
 
-Apple Silicon runs natively on macOS. Older/non-Mac hardware uses the qualified Sonic Linux live USB or dual-boot path preserving existing host data. Media writing, package compatibility and capacity checks remain Sonic/product qualification gates.
+Apple Silicon runs natively on macOS. On older and non-Mac hardware, the target is a Sonic-prepared Linux live USB or dual-boot path that preserves host data. Media writing, package compatibility and capacity checks still require qualification.
