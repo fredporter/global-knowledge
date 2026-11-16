@@ -8,5 +8,7 @@ This branch is a selective reconciliation proposal based on upstream, not a comp
 - [Layering and contribution contract](KNOWLEDGE_LAYERING_AND_CONTRIBUTION_SPEC.md)
 - [Container semantics and capacity planning](standards/CONTAINER-STANDARDS.md)
 - [Host reference contract](datasets/SOVEREIGN_HOST_REFERENCE.md)
+- [Seed research pilot](research/length-conversions.md)
+- [Navigation curation proposal](research/navigation.md)
 
 Retained VERSION is upstream prerelease metadata, not proof of a verified edition. Standards and datasets beyond this proposal require selective review before import. Runtime code, environments and services remain with product owners.

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "datasets/world_parameters.json",
+      "sha256": "96ca3bb267df95291773dd4b167c3d33e2e54951b1134d91e778dbdc2ba1c245",
+      "checks": [
+        {
+          "keys": [
+            "measurement_standards",
+            "length",
+            "inch_in_meters"
+          ],
+          "equals": 0.0254,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "measurement_standards",
+            "length",
+            "foot_in_meters"
+          ],
+          "equals": 0.3048,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "measurement_standards",
+            "length",
+            "yard_in_meters"
+          ],
+          "equals": 0.9144,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "measurement_standards",
+            "length",
+            "mile_in_meters"
+          ],
+          "equals": 1609.344,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        }
+      ]
+    }
+  ]
+}
