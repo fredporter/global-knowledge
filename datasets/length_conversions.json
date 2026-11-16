@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "unit": "m",
+  "exact": true,
+  "metres_per_unit": {
+    "inch_in_meters": 0.0254,
+    "foot_in_meters": 0.3048,
+    "yard_in_meters": 0.9144,
+    "mile_in_meters": 1609.344
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "navigation/map_reading.md",
+      "sha256": "71ec5551aebfcc0e5b3d2ebb5c3ea96f25b7f21dae48c532039ca96e1aa49485",
+      "uid": "udos-guide-navigation-20251204193500-UTC-L300AB73",
+      "links": [
+        "compass_use.md"
+      ],
+      "checks": [
+        {
+          "equals": "Map Reading",
+          "source": {
+            "url": "https://www.ga.gov.au/scientific-topics/national-location-information/topographic-maps/map-reading-guide",
+            "locator": "What will you learn? Map scale, map symbols, contours, and orientation",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Independently written explanations of facts and methods; no copied prose or diagrams"
+          }
+        }
+      ]
+    },
+    {
+      "path": "navigation/compass_use.md",
+      "sha256": "a21521fd7f9ff1053090566590f57ab86b64c1fa144ce3b40bc73d44ba8fc266",
+      "uid": "udos-guide-navigation-20251204193000-UTC-L300AB68",
+      "links": [
+        "map_reading.md"
+      ],
+      "checks": [
+        {
+          "equals": "Compass Use",
+          "source": {
+            "url": "https://www.ga.gov.au/bigobj/GA7194.pdf",
+            "locator": "Revised 2005, pp. 6–7 (north and bearings), 16–19 (compass and bearing conversion)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Independently written explanations of facts and methods; no copied prose or diagrams"
+          }
+        }
+      ]
+    }
+  ]
+}

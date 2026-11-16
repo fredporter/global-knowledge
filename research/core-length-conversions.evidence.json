@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "datasets/length_conversions.json",
+      "sha256": "711250562fc59b2b8601e19ee1c1b5aa67bba25896bd896f59b68a6db9c935c7",
+      "checks": [
+        {
+          "keys": [
+            "metres_per_unit",
+            "inch_in_meters"
+          ],
+          "equals": 0.0254,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "metres_per_unit",
+            "foot_in_meters"
+          ],
+          "equals": 0.3048,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "metres_per_unit",
+            "yard_in_meters"
+          ],
+          "equals": 0.9144,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        },
+        {
+          "keys": [
+            "metres_per_unit",
+            "mile_in_meters"
+          ],
+          "equals": 1609.344,
+          "source": {
+            "url": "https://www.nist.gov/system/files/documents/2022/11/30/2023%20NIST%20Handbook%2044.pdf",
+            "locator": "Appendix C, section 4, Units of Length table and accompanying note (p. C-10)",
+            "accessed": "2026-11-12",
+            "reuse_basis": "Numerical facts only; no copied prose, image or table layout"
+          }
+        }
+      ]
+    }
+  ]
+}
