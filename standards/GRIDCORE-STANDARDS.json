@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GridCore Universal Standards",
+  "version": "1.1.0",
+  "description": "Universal characters, sprites, mosaic tiles, glyphs, and spatial mapping standards for GridCore and uCode.",
+  "lattice_spec": "GRIDCORE-LATTICE-SPEC.md",
+  "geometry": {
+    "dot_lattice": {
+      "dot_px": 4,
+      "description": "Atomic coordinate invariant: 1 dot = 4x4 logical raster pixels before display fitting."
+    },
+    "cell_registers": {
+      "square": {
+        "width_px": 8,
+        "height_px": 8,
+        "dots_w": 2,
+        "dots_h": 2,
+        "aspect_ratio": "1:1",
+        "default_for": "gaming, mapping, roguelike, sprites"
+      },
+      "tall": {
+        "width_px": 12,
+        "height_px": 20,
+        "dots_w": 3,
+        "dots_h": 5,
+        "aspect_ratio": "3:5",
+        "default_for": "teletext_mode7, character-grid reading"
+      }
+    },
+    "pitches": {
+      "column_pitch_px": 24,
+      "column_pitch_dots": 6,
+      "column_ratio": "3 square cells = 2 tall cells (3:2 ratio)",
+      "row_pitch_px": 40,
+      "row_pitch_dots": 10,
+      "row_ratio": "5 square rows = 2 tall rows"
+    },
+    "super_cell": {
+      "width_px": 24,
+      "height_px": 40,
+      "dots_w": 6,
+      "dots_h": 10,
+      "capacity": "Holds 3x5 square cells or 2x2 tall cells."
+    },
+    "teletext_screen": {
+      "columns": 40,
+      "rows": 25,
+      "aspect_ratio": "4:3",
+      "aspect_ratio_kind": "traditional_presentation",
+      "logical_raster": { "width": 480, "height": 500 },
+      "char_cell": { "width": 12, "height": 20 }
+    },
+    "tile_dimensions": [
+      { "id": "micro", "size": 8, "dots": 2, "usage": "dense_maps" },
+      { "id": "standard", "size": 16, "dots": 4, "usage": "retro_gaming_and_nethack" },
+      { "id": "medium", "size": 24, "dots": 6, "usage": "column_block_pitch" },
+      { "id": "large", "size": 32, "dots": 8, "usage": "highres_tiles" }
+    ]
+  },
+  "recipe_profiles": {
+    "teletext-mode7": {
+      "register": "tall",
+      "font": "bedstead",
+      "columns": 40,
+      "rows": 25,
+      "header_row": 0,
+      "max_body_rows": 23,
+      "fastext_row": 24,
+      "preview_sgr": [
+        0,
+        1,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    "terminal-ansi": {
+      "register": "square",
+      "font": "pressstart2p",
+      "columns": 42,
+      "rows": 27,
+      "active_columns": 40,
+      "active_rows": 25,
+      "border_cells": 1
+    }
+  },
+  "default_canvas_palette": {
+    "0": {
+      "name": "black",
+      "hex": "#000000"
+    },
+    "1": {
+      "name": "red",
+      "hex": "#E6193C"
+    },
+    "2": {
+      "name": "green",
+      "hex": "#3FB950"
+    },
+    "3": {
+      "name": "yellow",
+      "hex": "#F2CC60"
+    },
+    "4": {
+      "name": "blue",
+      "hex": "#58A6FF"
+    },
+    "5": {
+      "name": "magenta",
+      "hex": "#BC8CFF"
+    },
+    "6": {
+      "name": "cyan",
+      "hex": "#39C5CF"
+    },
+    "7": {
+      "name": "white",
+      "hex": "#C9D1D9"
+    }
+  },
+  "character_sets": {
+    "G0": "Standard alphanumeric ASCII 7-bit character set (0x20 - 0x7E)",
+    "G1_block_mosaics": {
+      "matrix": "2x3 sub-block per character cell",
+      "modes": ["contiguous", "separated"],
+      "bit_mapping": [
+        { "bit": 0, "position": "top-left" },
+        { "bit": 1, "position": "top-right" },
+        { "bit": 2, "position": "middle-left" },
+        { "bit": 3, "position": "middle-right" },
+        { "bit": 4, "position": "bottom-left" },
+        { "bit": 6, "position": "bottom-right" }
+      ]
+    },
+    "control_codes": {
+      "alpha_black": 128,
+      "alpha_red": 129,
+      "alpha_green": 130,
+      "alpha_yellow": 131,
+      "alpha_blue": 132,
+      "alpha_magenta": 133,
+      "alpha_cyan": 134,
+      "alpha_white": 135,
+      "graphics_black": 144,
+      "graphics_red": 145,
+      "graphics_green": 146,
+      "graphics_yellow": 147,
+      "graphics_blue": 148,
+      "graphics_magenta": 149,
+      "graphics_cyan": 150,
+      "graphics_white": 151,
+      "double_height": 141,
+      "normal_height": 140,
+      "hold_graphics": 158,
+      "release_graphics": 159
+    }
+  },
+  "sprite_registry": {
+    "entities": ["player", "companion", "npc", "monster_undead", "monster_beast", "monster_demon"],
+    "items": ["weapon_sword", "weapon_bow", "potion", "scroll", "gold", "food", "key", "capsule_pod"],
+    "terrain": ["floor", "wall", "door_closed", "door_open", "stairs_up", "stairs_down", "water", "lava", "void"]
+  },
+  "bob_blitter_objects": {
+    "description": "Portable BOB format: multi-frame animated GIF with indexed canonical palette, transparent color index, and lattice-aligned motion.",
+    "formats": ["gif", "svg_frames"],
+    "max_dimensions": { "width": 128, "height": 128 },
+    "typical_dimensions": { "width": 64, "height": 64 },
+    "frame_rates": [8, 12, 16, 24],
+    "memory_footprint_formula": "width * height * frames * 1 byte (indexed palette)",
+    "target_file_size_kb": "15KB to 60KB",
+    "palettes": ["teletext_ceefax", "architectural_blueprint", "editorial_linocut", "pixel_16"]
+  },
+  "spatial_mapping": {
+    "coordinate_hierarchy": [
+      { "level": 0, "name": "universe", "format": "SPACE-[GALAXY]-L[LAYER]" },
+      { "level": 1, "name": "planet", "format": "SPACE-SOL-L[LAYER]" },
+      { "level": 2, "name": "region", "format": "EARTH-[REGION]-L100-[CELL]" },
+      { "level": 3, "name": "city", "format": "EARTH-[REGION]-L100-[CELL1]-[CELL2]" },
+      { "level": 4, "name": "district", "format": "EARTH-[REGION]-L100-[CELL1]-[CELL2]-[CELL3]" },
+      { "level": 5, "name": "location", "format": "EARTH-[REGION]-L100-[...]-[CELL4]" }
+    ]
+  }
+}

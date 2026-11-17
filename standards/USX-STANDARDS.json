@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "USX Universal Design System Standards",
+  "version": "1.1.0",
+  "description": "Canonical universal tokens, colors, typography, spacing, and image presets across all uDos surfaces.",
+  "style_spec": "USX-STYLE-SPEC.md",
+  "color_ownership": {
+    "surfaces": "Semantic CSS tokens are implemented by @udos/usx-tokens. The surfaces.dark table retains legacy export names and values.",
+    "teletext_primary": "Legacy asset palette. GridCore canvas palette indices and current colors are recorded in GRIDCORE-STANDARDS.json.",
+    "canonical_palettes": "Asset and display palettes. Keep them scoped to their content profiles."
+  },
+  "colors": {
+    "teletext_primary": {
+      "0": { "name": "black", "hex": "#000000", "ansi": 30 },
+      "1": { "name": "red", "hex": "#E6193C", "ansi": 31 },
+      "2": { "name": "green", "hex": "#3FB950", "ansi": 32 },
+      "3": { "name": "yellow", "hex": "#F2CC60", "ansi": 33 },
+      "4": { "name": "blue", "hex": "#58A6FF", "ansi": 34 },
+      "5": { "name": "magenta", "hex": "#BC8CFF", "ansi": 35 },
+      "6": { "name": "cyan", "hex": "#39C5CF", "ansi": 36 },
+      "7": { "name": "white", "hex": "#FFFFFF", "ansi": 37 }
+    },
+    "canonical_palettes": {
+      "architectural_blueprint": {
+        "substrate": "#0A2342",
+        "primary_line": "#00E5FF",
+        "secondary_line": "#A6F0FF",
+        "highlight": "#FFFFFF"
+      },
+      "editorial_linocut": {
+        "substrate": "#FAF8F5",
+        "primary_ink": "#111111",
+        "shade": "#2D3139",
+        "highlight": "#FFFDF8"
+      },
+      "monochrome_paper": {
+        "background": "#F6F8FA",
+        "foreground": "#1F2328",
+        "dim": "#656D76",
+        "highlight": "#0969DA"
+      },
+      "green_crt": {
+        "background": "#051005",
+        "foreground": "#33FF33",
+        "dim": "#1B801B",
+        "highlight": "#66FF66"
+      },
+      "pixel_16": [
+        "#141013", "#2C1B4D", "#841C3C", "#29462A",
+        "#73432A", "#4C5464", "#9BA3A9", "#FFFFFF",
+        "#E03C3C", "#E8732A", "#F4B41B", "#56C639",
+        "#3CB0E8", "#6850A4", "#E85E8C", "#F4B896"
+      ]
+    },
+    "surfaces": {
+      "dark": {
+        "--usx-color-bg": "#0D1117",
+        "--usx-color-surface": "#161B22",
+        "--usx-color-surface-variant": "#21262D",
+        "--usx-color-border": "#30363D",
+        "--usx-color-text": "#E6EDF3",
+        "--usx-color-text-muted": "#8B949E",
+        "--usx-color-primary": "#58A6FF",
+        "--usx-color-accent": "#2EA043"
+      }
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "48px"
+  },
+  "radius": {
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem",
+    "2xl": "1.5rem",
+    "full": "9999px"
+  },
+  "controls": {
+    "touch_min": "48px",
+    "touch_min_sm": "40px",
+    "button_class": "usx-btn",
+    "icon_component": "UIcon",
+    "warning_token": "--usx-color-warning"
+  },
+  "display_profiles": {
+    "pos_kiosk": {
+      "aspect_ratio": "4:3",
+      "resolution": { "width": 800, "height": 600 },
+      "interaction": "touch",
+      "reading_measure": "40ch",
+      "primary_mode": "zen_card"
+    },
+    "retro_crt": {
+      "aspect_ratio": "4:3",
+      "resolution": { "width": 1024, "height": 768 },
+      "interaction": "keyboard_pointer",
+      "reading_measure": "70ch",
+      "primary_mode": "zen_card"
+    },
+    "desktop_hd": {
+      "aspect_ratio": "16:9",
+      "resolution": { "width": 1920, "height": 1080 },
+      "interaction": "keyboard_mouse",
+      "reading_measure": "72ch",
+      "primary_mode": "prose_reader"
+    },
+    "ten_foot_tv": {
+      "aspect_ratio": "16:9",
+      "resolution": { "width": 1920, "height": 1080 },
+      "interaction": "dpad_gamepad",
+      "reading_measure": "50ch",
+      "primary_mode": "ten_foot_deck"
+    }
+  },
+  "image_presets": {
+    "1:1": {
+      "aspect_ratio": "1:1",
+      "roles": ["avatar", "gridcore_tile", "sprite_icon", "bob_blitter"],
+      "resolutions": [
+        { "width": 16, "height": 16, "usage": "micro_tile" },
+        { "width": 32, "height": 32, "usage": "standard_sprite" },
+        { "width": 64, "height": 64, "usage": "large_bob" },
+        { "width": 128, "height": 128, "usage": "hero_bob" },
+        { "width": 256, "height": 256, "usage": "avatar_standard" },
+        { "width": 512, "height": 512, "usage": "artwork_square" }
+      ]
+    },
+    "4:3": {
+      "aspect_ratio": "4:3",
+      "roles": ["retro_crt", "teletext_mode7_screen", "capsule_viewport", "zen_card_viewport"],
+      "resolutions": [
+        { "width": 320, "height": 240, "usage": "lowres_canvas" },
+        { "width": 640, "height": 480, "usage": "standard_crt" },
+        { "width": 800, "height": 600, "usage": "pos_kiosk_native" },
+        { "width": 1024, "height": 768, "usage": "retro_pc_native" }
+      ]
+    },
+    "16:9": {
+      "aspect_ratio": "16:9",
+      "roles": ["homenest_console_tv", "widescreen_card", "modern_display"],
+      "resolutions": [
+        { "width": 1280, "height": 720, "usage": "720p_card" },
+        { "width": 1920, "height": 1080, "usage": "1080p_console" }
+      ]
+    },
+    "2:1": {
+      "aspect_ratio": "2:1",
+      "roles": ["banner", "hero_header", "status_strip"],
+      "resolutions": [
+        { "width": 1200, "height": 600, "usage": "hero_banner" }
+      ]
+    },
+    "3:4": {
+      "aspect_ratio": "3:4",
+      "roles": ["document_binder", "book_cover", "portrait_manual"],
+      "resolutions": [
+        { "width": 768, "height": 1024, "usage": "binder_cover" }
+      ]
+    }
+  }
+}

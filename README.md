@@ -7,6 +7,8 @@ This branch is a selective reconciliation proposal based on upstream, not a comp
 - [Edition plan](EDITION_PLAN.md)
 - [Layering and contribution contract](KNOWLEDGE_LAYERING_AND_CONTRIBUTION_SPEC.md)
 - [Container semantics and capacity planning](standards/CONTAINER-STANDARDS.md)
+- [USX surface style and recipes](standards/USX-STYLE-SPEC.md)
+- [GridCore lattice and recipe display profiles](standards/GRIDCORE-LATTICE-SPEC.md)
 - [Host reference contract](datasets/SOVEREIGN_HOST_REFERENCE.md)
 - [Seed research pilot](research/length-conversions.md)
 - [Navigation curation proposal](research/navigation.md)
