@@ -1,0 +1,106 @@
+{
+  "schema": "udos.canon-divergence/1",
+  "generated_at": "2026-11-24",
+  "merge_base": null,
+  "refs": {
+    "main": "1a64f69613d7d8eec379816c3f4fddf7f5a44e96",
+    "origin/main": "3790759d9a793c590fdf6cda5c889316f6a3d37c",
+    "plan/selective-canon-reconciliation": "5ef7c6b09bae522000424a12457ae42ae50e1e7a",
+    "origin/plan/selective-canon-reconciliation": "5ef7c6b09bae522000424a12457ae42ae50e1e7a",
+    "recovery/consolidation-2026-11-10": "f45573ca4f36b9b4c2efbd2eadd52db3ff85c114",
+    "preserve/local-2026-11-10": "5e6abf3327b56f8902d25fcb0f2a263339d00bf8",
+    "preserve/upstream-2026-11-10": "c69c46c5491cddf186b8fe4519fdfe447bee4568",
+    "preserved/installed-baseline-2026-11-09": "5e6abf3327b56f8902d25fcb0f2a263339d00bf8"
+  },
+  "local_history": [
+    "1a64f69613d7d8eec379816c3f4fddf7f5a44e96 fix(datasets): pin the lock-derived NanoCoder dependency bundle",
+    "1ea52160b0ee8a54ab747bf8b02f18f09e107bf0 feat(datasets): declare the pinned NanoCoder dependency bundle",
+    "7c307cb82f158422eff2632894905b50e4b74ffa feat(datasets): add the Layer 0 distribution catalogue seed",
+    "d8ceb7bd2919e7e34e66565631a8335904ee8632 Checkpoint communications and interface standards",
+    "5e6abf3327b56f8902d25fcb0f2a263339d00bf8 feat(standards): harmonize USX and GridCore standards, add device display and container capacity standards",
+    "29dc7c0ab9410ffde4e87b5f5c3957e5f4ebc04d feat(standards,datasets): establish canonical Universal Standards, offline datasets & layering spec",
+    "a4e093d8ed42f7a4a6ca0042a035a1af1c95659e restructure: promote knowledge/ to repo root, archive concepts/surfaces/standards, move runtime to .local/",
+    "b8283b54ad2b6dd4c41a2789b64d100a8e53a52b refactor: move ~/Public/ content into global-vault/ subdirectory",
+    "3c57d3ad2c4281d3146bdf6c73b98f8e909f780a Add .gitignore (build output, macOS defaults, Drop Box) and publish tool (bin/publish)",
+    "d8c1117d7da556b0df18cb15286303e1d96af193 feat: restore Global Knowledge Bank from iCloud",
+    "469de2dc697fee7bd324e65d5c21a4f081d9e748 chore: initialise Public library container"
+  ],
+  "upstream_history": [
+    "3790759d9a793c590fdf6cda5c889316f6a3d37c fix(datasets): pin the lock-derived NanoCoder dependency bundle",
+    "be396b09b6b721ef31918649c89f90c8cfadeaf8 feat(datasets): declare the pinned NanoCoder dependency bundle",
+    "7ac6ff5128e31854e50fc1b050a22450d4f6cf87 feat(datasets): add the Layer 0 distribution catalogue seed",
+    "ca306af069bf70f80d3c8f46d82bea144644b86c Standardise USX and GridCore styles from Engineering recipes",
+    "3451afdc46814c8b110e9a03363f63e57b291b54 Review selective Global Knowledge contracts (#1)",
+    "c69c46c5491cddf186b8fe4519fdfe447bee4568 Add prerelease version 0.1.0-dev",
+    "1d8f21fa8424e6d8972880b91002290b854def7a feat: initial migrated repository snapshot"
+  ],
+  "wip": {
+    "diffstat": "8 files changed, 117 insertions(+), 3993 deletions(-)",
+    "files": [
+      {
+        "path": "_index.json",
+        "bytes": 1194,
+        "sha256": "c404a0a05d0e6c0257192cf7bf6b487384419efbd8abbefcbe29ef29138a12f7",
+        "decision": "deferred; regenerate with the reviewed index tool"
+      },
+      {
+        "path": "skills/sewing-mending-basics.md",
+        "bytes": 14258,
+        "sha256": "efad5b7155eab693a8eb21dae51850041202240151ac6ddd23add93ee1947133",
+        "decision": "superseded; recovery only"
+      },
+      {
+        "path": "skills/tool-skills-maintenance.md",
+        "bytes": 16826,
+        "sha256": "eba9ebe5b25e937b660f044407e50ea14fa541eecba99574e4fad2e5a1840b8b",
+        "decision": "superseded; recovery only"
+      },
+      {
+        "path": "standards/GRIDCORE-LATTICE-SPEC.md",
+        "bytes": 5100,
+        "sha256": "5e5fb1322211d912466d442049f335e40c1484a724c87d11ddd3867ae1cfcbb9",
+        "decision": "superseded by upstream standardisation"
+      },
+      {
+        "path": "standards/GRIDCORE-STANDARDS.json",
+        "bytes": 5322,
+        "sha256": "8bc16a0dbfd7d59b77e96dbdcdbab36f99674c0afae19082ade9025facbc3cff",
+        "decision": "superseded by upstream standardisation (1.1.0)"
+      },
+      {
+        "path": "standards/PROSE-STANDARDS.md",
+        "bytes": 2681,
+        "sha256": "028404cb19a445b2d8d2240322034abcebeb658656f8d24e6b8a29a442968cc5",
+        "decision": "superseded by upstream standardisation"
+      },
+      {
+        "path": "standards/USX-STYLE-SPEC.md",
+        "bytes": 4702,
+        "sha256": "712ccd6195a9cc50c3d1486e64809da18233ef0ab4eeee3203b9d15bed334e35",
+        "decision": "superseded by upstream standardisation"
+      },
+      {
+        "path": "version.json",
+        "bytes": 812,
+        "sha256": "fcf36009be3bc2d14ad4d43ce678b964f47e1c8af6afd8133f2a0730701246a1",
+        "decision": "deferred; regenerate after corpus decision"
+      }
+    ]
+  },
+  "recovery": {
+    "tag": "preserve/canon-local-main-2026-11-24",
+    "backup_dir": "$UDOS_HOME/backups/canon-c02-2026-11-24",
+    "bundle": "$UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-2026-11-24.bundle",
+    "bundle_bytes": 84218275,
+    "bundle_sha256": "d074e50469f0f90de2793b65b4424ca2ca0c8c24b1589c50fa8a84f99a1bfd2f",
+    "wip_patch": "$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch",
+    "wip_patch_sha256": "0a2d0b6875d47052d9068be985106561c53d4038d3da5ea261484548df3eaeaf",
+    "manifest": "$UDOS_HOME/backups/canon-c02-2026-11-24/MANIFEST.sha256",
+    "manifest_sha256": "28abfd2613d0c0e5cbc6c230d579173b26956bc4126674b53d34914b9ca3ab71"
+  },
+  "decisions": {
+    "history": "unrelated histories; no merge, reset or pull performed",
+    "corpus": "local main keeps the broader contributor corpus for provenance and distribution review",
+    "installed_canon": "no writes to the installed canon under ~/Public"
+  }
+}
