@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "sonic.catalogue/1",
+  "version": "0.1.0",
+  "layer": 0,
+  "status": "seed",
+  "description": "Distributable base catalogue of known distribution lanes. Metadata only: no payloads, no local paths, no credentials. The local instance (retention, verification, receipts) lives in the Depot and is never committed.",
+  "source": {
+    "repository": "https://github.com/fredporter/global-knowledge",
+    "path": "datasets/distribution_catalogue.json",
+    "layer": 0,
+    "note": "Canonical copy. Published to ~/Public/global-knowledge/datasets/ for distribution."
+  },
+  "generated_at": "2026-11-24T00:00:00Z",
+  "titles": [
+    {
+      "id": "nanocoder",
+      "title": "NanoCoder",
+      "summary": "Local coding agent runtime (ACP) used by the uCore Developer surface",
+      "provenance": "upstream",
+      "license": "MIT",
+      "upstream_url": "https://registry.npmjs.org/@nanocollective/nanocoder/-/nanocoder-1.30.0.tgz",
+      "editions": [
+        {
+          "id": "nanocoder-1.30.0",
+          "treatment": "adapted",
+          "status": "release",
+          "media_policy": "bundled",
+          "resolved_ref": "1.30.0",
+          "capsules": [
+            {
+              "id": "nanocoder",
+              "kind": "installer",
+              "version": "1.30.0",
+              "file_name": "nanocollective-nanocoder-1.30.0.tgz",
+              "sha256": "ba9323207bd2d2b4d5ac9d7c77f08f7c2405415d73e8fe0b8929e7366df6dccc",
+              "bytes": 1349964
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linuxmint",
+      "title": "Linux Mint",
+      "summary": "Bootable Linux Mint media for Sonic revival profiles",
+      "provenance": "upstream",
+      "license": "Various (distribution media)",
+      "upstream_url": "https://linuxmint.com/download.php",
+      "editions": [
+        {
+          "id": "linuxmint-cinnamon-full",
+          "treatment": "authentic",
+          "status": "research",
+          "media_policy": "bundled",
+          "resolved_ref": "unpinned",
+          "capsules": [
+            {
+              "id": "mint-cinnamon-iso",
+              "kind": "image",
+              "version": "unpinned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-edition",
+      "title": "Knowledge Edition",
+      "summary": "Canonical Layer 0 knowledge bank distributed with every device",
+      "provenance": "ecosystem",
+      "license": "CC-BY-4.0",
+      "upstream_url": "https://github.com/uDosGo/global-knowledge",
+      "editions": [
+        {
+          "id": "knowledge-1.1.0",
+          "treatment": "authentic",
+          "status": "verified",
+          "media_policy": "bundled",
+          "resolved_ref": "1.1.0",
+          "capsules": [
+            {
+              "id": "knowledge-edition",
+              "kind": "edition",
+              "version": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "managed_lanes": [
+    {
+      "id": "ollama-models",
+      "owner": "Ollama",
+      "root": "$UDOS_HOME/runtimes/ollama",
+      "retained": false,
+      "note": "Owner-managed live store. Never copied into the Depot."
+    },
+    {
+      "id": "oci-images",
+      "owner": "Colima/Docker",
+      "root": "$UDOS_HOME/runtimes/colima",
+      "retained": false,
+      "note": "Owner-managed live store. Reclaim decisions go through the Docker gate."
+    },
+    {
+      "id": "toolchains",
+      "owner": "uCore",
+      "root": "$UDOS_HOME/toolchains",
+      "retained": false,
+      "note": "Shared compiler and runtime homes; rebuilt from their own pins."
+    }
+  ]
+}
