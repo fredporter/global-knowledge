@@ -57,20 +57,22 @@ any decision.
 | Preserved tag | `preserve/canon-local-main-2026-11-24` → `1a64f69613d7d8eec379816c3f4fddf7f5a44e96` |
 | Repository bundle | `$UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-2026-11-24.bundle` (80.3 MB) |
 | Bundle SHA-256 | `d074e50469f0f90de2793b65b4424ca2ca0c8c24b1589c50fa8a84f99a1bfd2f` |
-| WIP patch | `$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch` |
-| Patch SHA-256 | `0a2d0b6875d47052d9068be985106561c53d4038d3da5ea261484548df3eaeaf` |
+| WIP patch | `$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24-verified.patch` |
+| Patch SHA-256 | `d071d7274fc42596f0ed23b6516ebe5c38e0972907496cd6dbfe573c3375e787` |
 | Manifest | `$UDOS_HOME/backups/canon-c02-2026-11-24/MANIFEST.sha256` |
 
-Restore the working tree:
+The original patch omitted its terminating newline and is retained as
+historical evidence. A scratch restore from the bundle plus the verified
+patch reproduced all eight saved file copies byte for byte.
+
+Restore into a new scratch checkout:
 
 ```sh
-git -C ~/Code/global-knowledge apply $UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch
-```
-
-Restore the history into a scratch clone:
-
-```sh
-git clone $UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-2026-11-24.bundle canon-recovery
+recovery_root="$UDOS_HOME/backups/canon-c02-2026-11-24"
+(cd "$recovery_root" && shasum -a 256 -c MANIFEST.sha256)
+git clone "$recovery_root/global-knowledge-local-main-2026-11-24.bundle" canon-recovery
+git -C canon-recovery apply --check "$recovery_root/canon-wip-2026-11-24-verified.patch"
+git -C canon-recovery apply "$recovery_root/canon-wip-2026-11-24-verified.patch"
 ```
 
 ## Verification
@@ -79,7 +81,7 @@ git clone $UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-20
 git -C ~/Code/global-knowledge merge-base --all main origin/main   # no output
 git -C ~/Code/global-knowledge rev-parse preserve/canon-local-main-2026-11-24
 shasum -a 256 $UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-2026-11-24.bundle
-shasum -a 256 $UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch
+shasum -a 256 $UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24-verified.patch
 ```
 
 Machine-readable evidence: `research/canon-divergence-2026-11-24.evidence.json`.

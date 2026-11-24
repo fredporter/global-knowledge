@@ -93,10 +93,13 @@
     "bundle": "$UDOS_HOME/backups/canon-c02-2026-11-24/global-knowledge-local-main-2026-11-24.bundle",
     "bundle_bytes": 84218275,
     "bundle_sha256": "d074e50469f0f90de2793b65b4424ca2ca0c8c24b1589c50fa8a84f99a1bfd2f",
-    "wip_patch": "$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch",
-    "wip_patch_sha256": "0a2d0b6875d47052d9068be985106561c53d4038d3da5ea261484548df3eaeaf",
+    "wip_patch": "$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24-verified.patch",
+    "wip_patch_sha256": "d071d7274fc42596f0ed23b6516ebe5c38e0972907496cd6dbfe573c3375e787",
     "manifest": "$UDOS_HOME/backups/canon-c02-2026-11-24/MANIFEST.sha256",
-    "manifest_sha256": "28abfd2613d0c0e5cbc6c230d579173b26956bc4126674b53d34914b9ca3ab71"
+    "manifest_sha256": "43baf83cc5153c89ead8e05382f4c14d4eae8815b558a1d2e2beea2124691eb3",
+    "original_wip_patch": "$UDOS_HOME/backups/canon-c02-2026-11-24/canon-wip-2026-11-24.patch",
+    "original_wip_patch_sha256": "0a2d0b6875d47052d9068be985106561c53d4038d3da5ea261484548df3eaeaf",
+    "restore_verified_files": 8
   },
   "decisions": {
     "history": "unrelated histories; no merge, reset or pull performed",
