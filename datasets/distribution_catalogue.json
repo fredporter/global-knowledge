@@ -35,6 +35,14 @@
               "file_name": "nanocollective-nanocoder-1.30.0.tgz",
               "sha256": "ba9323207bd2d2b4d5ac9d7c77f08f7c2405415d73e8fe0b8929e7366df6dccc",
               "bytes": 1349964
+            },
+            {
+              "id": "nanocoder-npm-cache",
+              "kind": "package",
+              "version": "1.30.0",
+              "file_name": "nanocoder-1.30.0-npm-cache.tar.gz",
+              "sha256": "0e396c6a7e65da7a6f9822c29bb3af453b6355c5ed5b81cfccea6b7a8da7815b",
+              "bytes": 79590347
             }
           ]
         }
