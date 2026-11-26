@@ -2,7 +2,16 @@
 
 Version 1.1.0. Universal baseline for uDOS interfaces. [USX standards data](USX-STANDARDS.json) records default scales and asset presets. The shared `@udos/usx-tokens` package implements the CSS, and the Engineering Recipe Gallery shows how the patterns fit together.
 
-## Surface rules
+## Colour
+
+USX colour follows the [Bootstrap 6 colour system](https://getbootstrap.com/docs/6.0/customize/color/): a 13-stop palette per hue (`025`–`975`), semantic roles assigned per colour mode, and a contrast partner for every fill.
+
+- **Palette.** `tokens-color.css` carries the Bootstrap 6 base hues as sRGB stops (`--usx-color-{hue}-{stop}`). USX declares the stops it consumes; the formula is Bootstrap's white-tint / black-shade mix, so adding a stop stays compatible.
+- **Role mapping.** `primary`=blue, `success`=green, `danger`=red, `warning`=yellow/amber, `info`=cyan, `secondary`=gray. `accent` maps to indigo once those stops are declared.
+- **Roles per colour.** `--usx-color-{role}` is both the foreground on canvas and the fill for badges; `-surface` and `-border` carry containers; `on-{role}` is the contrast partner. Light mode uses the 600/700 stops with white contrast; `themes/dark.css` swaps to the 400 stops with 900-stop contrast.
+- **Contrast is enforced.** `scripts/check_content_contract.py` measures every role pair against each theme's canvas. Light, dark and high-contrast must pass `4.5:1`; `c64` and `teletext` report as warnings because retro palettes belong inside the GridCore viewport.
+- **Latitude.** If a colour is only ever a fill, use the `500` stop; if it carries text, use the role token. Do not improvise a hex.
+
 
 - Use AppShell and GlobalToolbar for shared navigation. A hosted surface does not add a second Dashboard or back bar. Keep surface tabs for views within the surface.
 - Use the shared semantic canvas, surface, text, border and status tokens. Keep body and muted text legible in light and dark. Use `--usx-color-warning` for warnings. Keep retro display palettes inside the GridCore viewport. The gallery's local theme overrides are preview styling.

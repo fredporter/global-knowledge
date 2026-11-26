@@ -54,6 +54,20 @@
       { "id": "large", "size": 32, "dots": 8, "usage": "highres_tiles" }
     ]
   },
+  "palette": {
+    "description": "Canonical 8-colour lattice palette. GridCore colours are palette indices and are theme-independent: a teletext screen does not recolour when the desktop theme changes. Prose themes style the chrome around the viewport only.",
+    "source": "Teletext / ANSI SGR 30-37",
+    "indices": [
+      { "index": 0, "name": "black", "hex": "#000000", "ansi": 30 },
+      { "index": 1, "name": "red", "hex": "#E6193C", "ansi": 31 },
+      { "index": 2, "name": "green", "hex": "#3FB950", "ansi": 32 },
+      { "index": 3, "name": "yellow", "hex": "#F2CC60", "ansi": 33 },
+      { "index": 4, "name": "blue", "hex": "#58A6FF", "ansi": 34 },
+      { "index": 5, "name": "magenta", "hex": "#BC8CFF", "ansi": 35 },
+      { "index": 6, "name": "cyan", "hex": "#39C5CF", "ansi": 36 },
+      { "index": 7, "name": "white", "hex": "#FFFFFF", "ansi": 37 }
+    ]
+  },
   "character_sets": {
     "G0": "Standard alphanumeric ASCII 7-bit character set (0x20 - 0x7E)",
     "G1_block_mosaics": {

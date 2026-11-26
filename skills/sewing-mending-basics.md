@@ -1,11 +1,14 @@
 ---
-title: "Basic Sewing & Mending Skills"
-id: skills-sewing-mending-basics
-type: skill
-category: skills
-tags: [skills, skills]
-difficulty: beginner
-last_updated: 2026-01-29
+uid: udos-guide-skills-20260130180000-UTC-L300AB24
+title: Basic Sewing & Mending Skills
+tags: [guide, knowledge, skills]
+status: living
+updated: 2026-01-30
+spec: wiki_spec_obsidian.md
+authoring-rules:
+- Knowledge guides use 'guide' tag
+- Content organized by technique/category
+- File-based, offline-first
 ---
 
 # Basic Sewing & Mending Skills
