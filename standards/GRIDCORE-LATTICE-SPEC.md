@@ -46,6 +46,10 @@ The Mode 7 matrix has a 480 × 500 logical raster before fitting. The traditiona
 
 GridCore colors are palette indices. Both gallery canvases use the default eight-color palette. In the Teletext fixture, SGR 30–37 select foreground indices 0–7, SGR 1 enables bold, and SGR 0 resets the style. Escape sequences occupy no cells. This preview input is distinct from native Mode 7 control codes, and the terminal preview is a fixed composition rather than a full ANSI emulator.
 
+The canonical palette and the lattice geometry live in [GRIDCORE-STANDARDS.json](GRIDCORE-STANDARDS.json). `gridcore.css` mirrors them as `--gridcore-palette-0..7` and `--gridcore-dot`, `--gridcore-cell-*`, `--gridcore-pitch-*`, `--gridcore-teletext-*`. The palette is theme-independent: a lattice does not recolour when the Prose theme changes, and the checker fails if the code drifts from the standards data.
+
+Scaling is integer-only. A lattice declares `[data-lattice]` with a `--gridcore-zoom` step of `1`, `2` or `3` and is never scaled fractionally by a display profile, because fractional scaling blurs the 4px dot and the glyph raster.
+
 Use the terminal renderer dimensions above when reviewing the gallery. The sample payload advertises 80 × 25 and pane widths, but the renderer uses the fixed 42 × 27 canvas and its own pane truncation. Check that content stays within its cells, the Teletext footer remains visible and the terminal border survives resizing. Use [USX surface style](USX-STYLE-SPEC.md) for the buttons and navigation around the viewport.
 
 ---

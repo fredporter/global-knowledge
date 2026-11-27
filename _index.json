@@ -1,0 +1,2410 @@
+{
+  "schema_version": 1,
+  "canon_version": "0.1.0-dev",
+  "total_entries": 244,
+  "documents": [
+    {
+      "path": "CANON-RECONCILIATION-2026-11-26.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "CURATION-2026-11-26.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "CURATION-2026-11-27.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "EDITION_PLAN.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "KNOWLEDGE_LAYERING_AND_CONTRIBUTION_SPEC.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "README.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "communication/README.md",
+      "uid": "udos-guide-communication-20260129200000-UTC-L300AB22",
+      "title": "Communication & Signaling",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/community_coordination.md",
+      "uid": "udos-guide-communication-20260129200300-UTC-L300AB29",
+      "title": "Community Coordination",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/dead_drop_techniques.md",
+      "uid": "udos-guide-communication-20260129200400-UTC-L300AB30",
+      "title": "Dead Drop Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/emergency_communication.md",
+      "uid": "udos-guide-communication-20260129200500-UTC-L300AB31",
+      "title": "Emergency Communication",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/encrypted_messaging_basics.md",
+      "uid": "udos-guide-communication-20260129200600-UTC-L300AB32",
+      "title": "Encrypted Messaging Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/ground-to-air_signals.md",
+      "uid": "udos-guide-communication-20260129200700-UTC-L300AB33",
+      "title": "Ground-To-Air Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/hand_signals.md",
+      "uid": "udos-guide-communication-20260129200800-UTC-L300AB34",
+      "title": "Hand Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/message_systems.md",
+      "uid": "udos-guide-communication-20260129200900-UTC-L300AB35",
+      "title": "Message Systems",
+      "tags": []
+    },
+    {
+      "path": "communication/mirror_signals.md",
+      "uid": "udos-guide-communication-20260129201000-UTC-L300AB36",
+      "title": "Mirror Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/morse_code.md",
+      "uid": "udos-guide-communication-20260129201100-UTC-L300AB37",
+      "title": "Morse Code",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/radio_basics.md",
+      "uid": "udos-guide-communication-20260129201200-UTC-L300AB38",
+      "title": "Radio Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/security_protocols.md",
+      "uid": "udos-guide-communication-20260129201300-UTC-L300AB39",
+      "title": "Security Protocols",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/semaphore_flag_system.md",
+      "uid": "udos-guide-communication-20260129201400-UTC-L300AB40",
+      "title": "Semaphore Flag System",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/smoke_signals.md",
+      "uid": "udos-guide-communication-20260129201500-UTC-L300AB41",
+      "title": "Smoke Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/visual_distress_signals.md",
+      "uid": "udos-guide-communication-20260129201600-UTC-L300AB42",
+      "title": "Visual Distress Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "communication/whistle_codes.md",
+      "uid": "udos-guide-communication-20260129201700-UTC-L300AB43",
+      "title": "Whistle Codes",
+      "tags": [
+        "guide",
+        "knowledge",
+        "communication"
+      ]
+    },
+    {
+      "path": "datasets/SOVEREIGN_HOST_REFERENCE.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "fire/README.md",
+      "uid": "udos-guide-fire-20251204080000-UTC-L300AB12",
+      "title": "Fire Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire",
+        "survival"
+      ]
+    },
+    {
+      "path": "fire/bow_drill_technique.md",
+      "uid": "udos-guide-fire-20251204081800-UTC-L300AB44",
+      "title": "Bow Drill Technique",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/char_cloth_preparation.md",
+      "uid": "udos-guide-fire-20251204081900-UTC-L300AB45",
+      "title": "Char Cloth Preparation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/coal_bed_preservation.md",
+      "uid": "udos-guide-fire-20251204082000-UTC-L300AB46",
+      "title": "Coal Bed Preservation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/cooking_fires.md",
+      "uid": "udos-guide-fire-20251204082100-UTC-L300AB47",
+      "title": "Cooking Fires",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/emergency_fire_lighting.md",
+      "uid": "udos-guide-fire-20251204082200-UTC-L300AB48",
+      "title": "Emergency Fire Lighting",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_banking_overnight.md",
+      "uid": "udos-guide-fire-20251204082300-UTC-L300AB49",
+      "title": "Fire Banking Overnight",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_in_wet_conditions.md",
+      "uid": "udos-guide-fire-20251204082400-UTC-L300AB50",
+      "title": "Fire In Wet Conditions",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_maintenance.md",
+      "uid": "udos-guide-fire-20251204082500-UTC-L300AB51",
+      "title": "Fire Maintenance",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_plough_method.md",
+      "uid": "udos-guide-fire-20251204082600-UTC-L300AB52",
+      "title": "Fire Plough Method",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_reflector_construction.md",
+      "uid": "udos-guide-fire-20251204082700-UTC-L300AB53",
+      "title": "Fire Reflector Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_safety_zones.md",
+      "uid": "udos-guide-fire-20251204082800-UTC-L300AB54",
+      "title": "Fire Safety Zones",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_starter_materials.md",
+      "uid": "udos-guide-fire-20251204082900-UTC-L300AB55",
+      "title": "Fire Starter Materials",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/fire_starting_techniques.md",
+      "uid": "udos-guide-fire-20251204083000-UTC-L300AB56",
+      "title": "Fire Starting Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/flint_and_steel_methods.md",
+      "uid": "udos-guide-fire-20251204083100-UTC-L300AB57",
+      "title": "Flint And Steel Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/friction_fire_methods.md",
+      "uid": "udos-guide-fire-20251204083200-UTC-L300AB58",
+      "title": "Friction Fire Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/hand_drill_fire_making.md",
+      "uid": "udos-guide-fire-20251204083300-UTC-L300AB59",
+      "title": "Hand Drill Fire Making",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/improvised_fire_starters.md",
+      "uid": "udos-guide-fire-20251204083400-UTC-L300AB60",
+      "title": "Improvised Fire Starters",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/signal_fires.md",
+      "uid": "udos-guide-fire-20251204083500-UTC-L300AB61",
+      "title": "Signal Fires",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/smokeless_fires.md",
+      "uid": "udos-guide-fire-20251204083600-UTC-L300AB62",
+      "title": "Smokeless Fires",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "fire/tinder_preparation.md",
+      "uid": "udos-guide-fire-20251204083700-UTC-L300AB63",
+      "title": "Tinder Preparation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "fire"
+      ]
+    },
+    {
+      "path": "food/README.md",
+      "uid": "udos-guide-food-20251204140000-UTC-L300AB15",
+      "title": "Food & Foraging Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food",
+        "survival"
+      ]
+    },
+    {
+      "path": "food/bird_snaring_techniques.md",
+      "uid": "udos-guide-food-20251204143800-UTC-L300AB64",
+      "title": "Bird Snaring Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/bush-tucker.md",
+      "uid": "udos-guide-food-20251204143900-UTC-L300AB65",
+      "title": "Native Edible Plants (Bush Tucker)",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/bushcraft-recipes.md",
+      "uid": "udos-guide-food-20251204144000-UTC-L300AB66",
+      "title": "Bushcraft Recipes",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/composting-basics.md",
+      "uid": "udos-guide-food-20251204144100-UTC-L300AB67",
+      "title": "Composting Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/cooking_methods.md",
+      "uid": "udos-guide-food-20251204144200-UTC-L300AB68",
+      "title": "Cooking Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/drying-dehydration.md",
+      "uid": "udos-guide-food-20251204144300-UTC-L300AB69",
+      "title": "Food Preservation: Drying & Dehydration",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/drying_foods.md",
+      "uid": "udos-guide-food-20251204144400-UTC-L300AB70",
+      "title": "Drying Foods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/edible_plants_identification.md",
+      "uid": "udos-guide-food-20251204144500-UTC-L300AB71",
+      "title": "Edible Plants Identification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/emergency_food_rationing.md",
+      "uid": "udos-guide-food-20251204144600-UTC-L300AB72",
+      "title": "Emergency Food Rationing",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/fish_trap_construction.md",
+      "uid": "udos-guide-food-20251204144700-UTC-L300AB73",
+      "title": "Fish Trap Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/fishing_techniques.md",
+      "uid": "udos-guide-food-20251204144800-UTC-L300AB74",
+      "title": "Fishing Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/food_preservation.md",
+      "uid": "udos-guide-food-20251204144900-UTC-L300AB75",
+      "title": "Food Preservation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/foraging_safety.md",
+      "uid": "udos-guide-food-20251204145000-UTC-L300AB76",
+      "title": "Foraging Safety",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/insect_protein_sources.md",
+      "uid": "udos-guide-food-20251204145100-UTC-L300AB77",
+      "title": "Insect Protein Sources",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/nutrition_planning.md",
+      "uid": "udos-guide-food-20251204145200-UTC-L300AB78",
+      "title": "Nutrition Planning",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/preservation-recipes.md",
+      "uid": "udos-guide-food-20251204145300-UTC-L300AB79",
+      "title": "Food Preservation Recipes",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/smoking_meat.md",
+      "uid": "udos-guide-food-20251204145400-UTC-L300AB80",
+      "title": "Smoking Meat",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/traditional-cooking-guide.md",
+      "uid": "udos-guide-food-20251204145500-UTC-L300AB81",
+      "title": "Traditional Home Cooking Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/trapping_basics.md",
+      "uid": "udos-guide-food-20251204145600-UTC-L300AB82",
+      "title": "Trapping Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/wild-edible-basics.md",
+      "uid": "udos-guide-food-20251204145700-UTC-L300AB83",
+      "title": "Wild Edible Plants: Basics & Safety",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/wild_edible_roots_and_tubers.md",
+      "uid": "udos-guide-food-20251204145800-UTC-L300AB84",
+      "title": "Wild Edible Roots And Tubers",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "food/wild_game_preparation.md",
+      "uid": "udos-guide-food-20251204145900-UTC-L300AB85",
+      "title": "Wild Game Preparation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "food"
+      ]
+    },
+    {
+      "path": "making/README.md",
+      "uid": "udos-guide-making-20260129180000-UTC-L300AB21",
+      "title": "Environment Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "making"
+      ]
+    },
+    {
+      "path": "making/basic-woodworking.md",
+      "uid": "udos-guide-making-20260129190000-UTC-L300AB86",
+      "title": "Basic Woodworking & Timber Projects",
+      "tags": [
+        "guide",
+        "knowledge",
+        "making"
+      ]
+    },
+    {
+      "path": "making/rope-making-cordage.md",
+      "uid": "udos-guide-making-20260129190100-UTC-L300AB87",
+      "title": "Rope Making & Natural Cordage",
+      "tags": [
+        "guide",
+        "knowledge",
+        "making"
+      ]
+    },
+    {
+      "path": "making/solar-power-basics.md",
+      "uid": "udos-guide-making-20260129190200-UTC-L300AB88",
+      "title": "Solar Power Basics: Off-Grid Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "making"
+      ]
+    },
+    {
+      "path": "making/water-collection-systems.md",
+      "uid": "udos-guide-making-20260129190300-UTC-L300AB89",
+      "title": "Water Collection Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "making"
+      ]
+    },
+    {
+      "path": "medical/README.md",
+      "uid": "udos-guide-medical-20251204160000-UTC-L300AB16",
+      "title": "Medical & First Aid Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical",
+        "survival"
+      ]
+    },
+    {
+      "path": "medical/basic-cpr.md",
+      "uid": "udos-guide-medical-20251204170400-UTC-L300AB90",
+      "title": "Basic CPR (Cardiopulmonary Resuscitation)",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/burns-treatment.md",
+      "uid": "udos-guide-medical-20251204170500-UTC-L300AB91",
+      "title": "Burns Treatment & Prevention",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/burns_treatment.md",
+      "uid": "udos-guide-medical-20251204170600-UTC-L300AB92",
+      "title": "Burns Treatment",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/choking-heimlich.md",
+      "uid": "udos-guide-medical-20251204170700-UTC-L300AB93",
+      "title": "Choking & Airway Obstruction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/dehydration-treatment.md",
+      "uid": "udos-guide-medical-20251204170800-UTC-L300AB94",
+      "title": "Dehydration Treatment & Prevention",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/emergency_cpr.md",
+      "uid": "udos-guide-medical-20251204170900-UTC-L300AB95",
+      "title": "Emergency Cpr",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/first-aid-kit.md",
+      "uid": "udos-guide-medical-20251204171000-UTC-L300AB96",
+      "title": "First Aid Kit - Essential Contents",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/first_aid_basics.md",
+      "uid": "udos-guide-medical-20251204171100-UTC-L300AB97",
+      "title": "First Aid Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/fracture_treatment.md",
+      "uid": "udos-guide-medical-20251204171200-UTC-L300AB98",
+      "title": "Fracture Treatment",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/fractures-sprains.md",
+      "uid": "udos-guide-medical-20251204171300-UTC-L300AB99",
+      "title": "Fractures, Sprains & Strains",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/heat-illness.md",
+      "uid": "udos-guide-medical-20251204171400-UTC-L300AB52",
+      "title": "Heat Stroke & Heat Exhaustion",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/heat_exhaustion.md",
+      "uid": "udos-guide-medical-20251204171500-UTC-L300AB53",
+      "title": "Heat Exhaustion",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/hypothermia.md",
+      "uid": "udos-guide-medical-20251204171600-UTC-L300AB54",
+      "title": "Hypothermia Treatment & Prevention",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/hypothermia_prevention.md",
+      "uid": "udos-guide-medical-20251204171700-UTC-L300AB55",
+      "title": "Hypothermia Prevention",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/infection_prevention.md",
+      "uid": "udos-guide-medical-20251204171800-UTC-L300AB56",
+      "title": "Infection Prevention",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/natural_antibiotics.md",
+      "uid": "udos-guide-medical-20251204171900-UTC-L300AB57",
+      "title": "Natural Antibiotics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/pain_management_without_medication.md",
+      "uid": "udos-guide-medical-20251204172000-UTC-L300AB58",
+      "title": "Pain Management Without Medication",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/plant_poisons.md",
+      "uid": "udos-guide-medical-20251204172100-UTC-L300AB59",
+      "title": "Plant Poisons",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/shock-treatment.md",
+      "uid": "udos-guide-medical-20251204172200-UTC-L300AB60",
+      "title": "Shock Treatment & Recognition",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/shock_management.md",
+      "uid": "udos-guide-medical-20251204172300-UTC-L300AB61",
+      "title": "Shock Management",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/snake_bites.md",
+      "uid": "udos-guide-medical-20251204172400-UTC-L300AB62",
+      "title": "Snake Bites",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/snakebite-treatment.md",
+      "uid": "udos-guide-medical-20251204172500-UTC-L300AB63",
+      "title": "Australian Snakebite Treatment Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/splinting_techniques.md",
+      "uid": "udos-guide-medical-20251204172600-UTC-L300AB64",
+      "title": "Splinting Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/wilderness_medicine.md",
+      "uid": "udos-guide-medical-20251204172700-UTC-L300AB65",
+      "title": "Wilderness Medicine",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/wound-care-bleeding.md",
+      "uid": "udos-guide-medical-20251204172800-UTC-L300AB66",
+      "title": "First Aid: Wound Care & Bleeding Control",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "medical/wound_care.md",
+      "uid": "udos-guide-medical-20251204172900-UTC-L300AB67",
+      "title": "Wound Care",
+      "tags": [
+        "guide",
+        "knowledge",
+        "medical"
+      ]
+    },
+    {
+      "path": "navigation/README.md",
+      "uid": "udos-guide-navigation-20251204180000-UTC-L300AB17",
+      "title": "Navigation & Wayfinding",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation",
+        "survival"
+      ]
+    },
+    {
+      "path": "navigation/astronomy-navigation-guide.md",
+      "uid": "udos-guide-navigation-20260130110200-UTC-L300AB94",
+      "title": "Advanced Astronomy Navigation Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation",
+        "astronomy"
+      ]
+    },
+    {
+      "path": "navigation/compass_use.md",
+      "uid": "udos-guide-navigation-20251204193000-UTC-L300AB68",
+      "title": "Compass Use",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/dead_reckoning_navigation.md",
+      "uid": "udos-guide-navigation-20251204193100-UTC-L300AB69",
+      "title": "Dead Reckoning Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/emergency_location_markers.md",
+      "uid": "udos-guide-navigation-20251204193200-UTC-L300AB70",
+      "title": "Emergency Location Markers",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/gps_basics_and_backup_methods.md",
+      "uid": "udos-guide-navigation-20251204193300-UTC-L300AB71",
+      "title": "GPS Basics and Backup Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/landmark_identification.md",
+      "uid": "udos-guide-navigation-20251204193400-UTC-L300AB72",
+      "title": "Landmark Identification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/map_reading.md",
+      "uid": "udos-guide-navigation-20251204193500-UTC-L300AB73",
+      "title": "Map Reading",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/natural_navigation.md",
+      "uid": "udos-guide-navigation-20251204193600-UTC-L300AB74",
+      "title": "Natural Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/ocean_current_navigation.md",
+      "uid": "udos-guide-navigation-20251204193700-UTC-L300AB75",
+      "title": "Ocean Current Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/rescue_signals.md",
+      "uid": "udos-guide-navigation-20251204193800-UTC-L300AB76",
+      "title": "Rescue Signals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/route_planning.md",
+      "uid": "udos-guide-navigation-20251204193900-UTC-L300AB77",
+      "title": "Route Planning",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/shadow_stick_method.md",
+      "uid": "udos-guide-navigation-20251204180000-UTC-L300AB78",
+      "title": "Shadow Stick Method",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/signaling_techniques.md",
+      "uid": "udos-guide-navigation-20251204180100-UTC-L300AB79",
+      "title": "Signaling Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/sos_procedures.md",
+      "uid": "udos-guide-navigation-20251204180200-UTC-L300AB80",
+      "title": "Sos Procedures",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/star_navigation.md",
+      "uid": "udos-guide-navigation-20251204180300-UTC-L300AB81",
+      "title": "Star Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/sun_navigation.md",
+      "uid": "udos-guide-navigation-20251204180400-UTC-L300AB82",
+      "title": "Sun Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/terrain_features.md",
+      "uid": "udos-guide-navigation-20251204180500-UTC-L300AB83",
+      "title": "Terrain Features",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/topographic_map_interpretation.md",
+      "uid": "udos-guide-navigation-20251204180600-UTC-L300AB84",
+      "title": "Topographic Map Interpretation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/trail_marking_systems.md",
+      "uid": "udos-guide-navigation-20251204180700-UTC-L300AB85",
+      "title": "Trail Marking Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/watch_navigation_technique.md",
+      "uid": "udos-guide-navigation-20251204180800-UTC-L300AB86",
+      "title": "Watch Navigation Technique",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "navigation/weather_pattern_navigation.md",
+      "uid": "udos-guide-navigation-20251204180900-UTC-L300AB87",
+      "title": "Weather Pattern Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "navigation"
+      ]
+    },
+    {
+      "path": "reference/README.md",
+      "uid": "udos-guide-reference-20260129220000-UTC-L300AB23",
+      "title": "Reference & Data",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/astrogeography.md",
+      "uid": "udos-guide-reference-20260130110500-UTC-L300AB97",
+      "title": "Astrogeography - Mapping Earth Through the Stars",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference",
+        "astronomy",
+        "cartography",
+        "geography"
+      ]
+    },
+    {
+      "path": "reference/astronomy-mapping-system-index.md",
+      "uid": "udos-guide-index-20260130110600-UTC-L300AB98",
+      "title": "Astronomy & World Mapping - Complete System Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "index",
+        "astronomy",
+        "cartography"
+      ]
+    },
+    {
+      "path": "reference/celestial-coordinate-systems.md",
+      "uid": "udos-guide-reference-20260130110300-UTC-L300AB95",
+      "title": "Celestial Coordinate Systems & Earth Mapping",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference",
+        "astronomy",
+        "cartography"
+      ]
+    },
+    {
+      "path": "reference/celestial-mechanics.md",
+      "uid": "udos-guide-reference-20260129221000-UTC-L300AB88",
+      "title": "Celestial Mechanics Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/celestial-objects.md",
+      "uid": "udos-guide-reference-20260130110100-UTC-L300AB93",
+      "title": "Celestial Objects Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference",
+        "astronomy"
+      ]
+    },
+    {
+      "path": "reference/chinese-astrology.md",
+      "uid": "udos-guide-reference-20260129221100-UTC-L300AB89",
+      "title": "Chinese Astrology Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/edible-plants-australia.md",
+      "uid": "udos-guide-reference-20260129221200-UTC-L300AB90",
+      "title": "Australian Edible Plants Quick Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/essential-knots.md",
+      "uid": "udos-guide-reference-20260129221300-UTC-L300AB91",
+      "title": "Essential Knots Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/fire-starting-methods-comparison.md",
+      "uid": "udos-guide-reference-20260129221400-UTC-L300AB92",
+      "title": "Fire Starting Methods - Comparison Chart",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/first-aid-quick-reference.md",
+      "uid": "udos-guide-reference-20260129221500-UTC-L300AB93",
+      "title": "First Aid Quick Reference",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/form-example.md",
+      "uid": "udos-guide-reference-20260129221600-UTC-L300AB94",
+      "title": "Form Example",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/knots-quick-reference.md",
+      "uid": "udos-guide-reference-20260129221700-UTC-L300AB95",
+      "title": "Knots Quick Reference Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/navigation-techniques-field-guide.md",
+      "uid": "udos-guide-reference-20260129221800-UTC-L300AB96",
+      "title": "Navigation Techniques - Field Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/numerology-basics.md",
+      "uid": "udos-guide-reference-20260129221900-UTC-L300AB97",
+      "title": "Numerology Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/planetary-systems-galaxies.md",
+      "uid": "udos-guide-reference-20260130110400-UTC-L300AB96",
+      "title": "Planetary Systems & Galactic Structures",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference",
+        "astronomy",
+        "cosmology"
+      ]
+    },
+    {
+      "path": "reference/seasonal-calendar-australia.md",
+      "uid": "udos-guide-reference-20260129222000-UTC-L300AB98",
+      "title": "Australian Seasonal Calendar & Gardening Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/survival-priorities-chart.md",
+      "uid": "udos-guide-reference-20260129222100-UTC-L300AB99",
+      "title": "Survival Priorities Reference Chart",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/water-purification-methods-comparison.md",
+      "uid": "udos-guide-reference-20260129222200-UTC-L300AB26",
+      "title": "Water Purification Methods - Comparison Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference"
+      ]
+    },
+    {
+      "path": "reference/world-map-layers.md",
+      "uid": "udos-guide-reference-20260130110000-UTC-L300AB92",
+      "title": "World Map Layers System",
+      "tags": [
+        "guide",
+        "knowledge",
+        "reference",
+        "mapping"
+      ]
+    },
+    {
+      "path": "research/core-scope.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "research/length-conversions.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "research/navigation.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "shelter/README.md",
+      "uid": "udos-guide-shelter-20251204120000-UTC-L300AB14",
+      "title": "Shelter Construction & Site Management",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter",
+        "survival"
+      ]
+    },
+    {
+      "path": "shelter/a-frame_shelters.md",
+      "uid": "udos-guide-shelter-20251204122300-UTC-L300AB27",
+      "title": "A-Frame Shelters",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/camouflage_techniques.md",
+      "uid": "udos-guide-shelter-20251204122400-UTC-L300AB28",
+      "title": "Camouflage Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/debris_huts.md",
+      "uid": "udos-guide-shelter-20251204122500-UTC-L300AB29",
+      "title": "Debris Huts",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/desert_shade_structures.md",
+      "uid": "udos-guide-shelter-20251204122600-UTC-L300AB30",
+      "title": "Desert Shade Structures",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/elevated_platform_shelters.md",
+      "uid": "udos-guide-shelter-20251204122700-UTC-L300AB31",
+      "title": "Elevated Platform Shelters",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/emergency_shelters.md",
+      "uid": "udos-guide-shelter-20251204122800-UTC-L300AB32",
+      "title": "Emergency Shelters",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/group_shelter_construction.md",
+      "uid": "udos-guide-shelter-20251204122900-UTC-L300AB33",
+      "title": "Group Shelter Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/insulation_techniques.md",
+      "uid": "udos-guide-shelter-20251204123000-UTC-L300AB34",
+      "title": "Insulation Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/knot_tying.md",
+      "uid": "udos-guide-shelter-20251204123100-UTC-L300AB35",
+      "title": "Knot Tying",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/lashing_techniques.md",
+      "uid": "udos-guide-shelter-20251204123200-UTC-L300AB36",
+      "title": "Lashing Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/lean-to_construction.md",
+      "uid": "udos-guide-shelter-20251204123300-UTC-L300AB37",
+      "title": "Lean-To Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/natural_shelter_modifications.md",
+      "uid": "udos-guide-shelter-20251204123400-UTC-L300AB38",
+      "title": "Natural Shelter Modifications",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/shelter_drainage_systems.md",
+      "uid": "udos-guide-shelter-20251204123500-UTC-L300AB39",
+      "title": "Shelter Drainage Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/shelter_site_selection.md",
+      "uid": "udos-guide-shelter-20251204123600-UTC-L300AB40",
+      "title": "Shelter Site Selection",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/shelter_ventilation.md",
+      "uid": "udos-guide-shelter-20251204123700-UTC-L300AB41",
+      "title": "Shelter Ventilation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/snow_cave_construction.md",
+      "uid": "udos-guide-shelter-20251204123800-UTC-L300AB42",
+      "title": "Snow Cave Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/tarp_shelter_configurations.md",
+      "uid": "udos-guide-shelter-20251204123900-UTC-L300AB43",
+      "title": "Tarp Shelter Configurations",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/tropical_shelter_building.md",
+      "uid": "udos-guide-shelter-20251204124000-UTC-L300AB44",
+      "title": "Tropical Shelter Building",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/underground_shelters.md",
+      "uid": "udos-guide-shelter-20251204124100-UTC-L300AB45",
+      "title": "Underground Shelters",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "shelter/weatherproofing.md",
+      "uid": "udos-guide-shelter-20251204124200-UTC-L300AB46",
+      "title": "Weatherproofing",
+      "tags": [
+        "guide",
+        "knowledge",
+        "shelter"
+      ]
+    },
+    {
+      "path": "skills/campfire-activities.md",
+      "uid": "udos-guide-skills-20260130174000-UTC-L300AB23",
+      "title": "Campfire Activities & Morale Games",
+      "tags": [
+        "guide",
+        "knowledge",
+        "skills"
+      ]
+    },
+    {
+      "path": "skills/dice-games.md",
+      "uid": "udos-guide-skills-20260130171000-UTC-L300AB20",
+      "title": "Dice Games & Probability Practice",
+      "tags": [
+        "guide",
+        "knowledge",
+        "skills"
+      ]
+    },
+    {
+      "path": "skills/map-reading-basics.md",
+      "uid": "udos-guide-skills-20260130171500-UTC-L300AB21",
+      "title": "Map Reading Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "skills"
+      ]
+    },
+    {
+      "path": "skills/sewing-mending-basics.md",
+      "uid": "udos-guide-skills-20260130180000-UTC-L300AB24",
+      "title": "Basic Sewing & Mending Skills",
+      "tags": [
+        "guide",
+        "knowledge",
+        "skills"
+      ]
+    },
+    {
+      "path": "skills/tool-skills-maintenance.md",
+      "uid": "udos-guide-skills-20260130180000-UTC-L300AB25",
+      "title": "Basic Tool Skills & Maintenance",
+      "tags": [
+        "guide",
+        "knowledge",
+        "skills"
+      ]
+    },
+    {
+      "path": "standards/COMMUNICATIONS-LOOP-SPEC.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "standards/CONTAINER-STANDARDS.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "standards/DEVICE-DISPLAY-STANDARDS.md",
+      "uid": "",
+      "title": "uDos Device Display Capability Standards & Calculation Engine",
+      "tags": [
+        "standards",
+        "display",
+        "hardware",
+        "geometry",
+        "gridcore",
+        "prose",
+        "sonic-screwdriver"
+      ]
+    },
+    {
+      "path": "standards/GRIDCORE-LATTICE-SPEC.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "standards/PROSE-STANDARDS.md",
+      "uid": "",
+      "title": "uDos Prose Typography & Presentation Standard",
+      "tags": [
+        "standards",
+        "prose",
+        "typography",
+        "usx"
+      ]
+    },
+    {
+      "path": "standards/USX-STYLE-SPEC.md",
+      "uid": "",
+      "title": "",
+      "tags": []
+    },
+    {
+      "path": "survival/INDEX.md",
+      "uid": "udos-guide-survival-20260129164500-UTC-L300AB49",
+      "title": "Survival Guide Library Index",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/README.md",
+      "uid": "udos-guide-survival-20260129160000-UTC-L300AB20",
+      "title": "Survival Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/boiling-purification.md",
+      "uid": "udos-guide-survival-20260129164600-UTC-L300AB50",
+      "title": "Water Purification: Boiling Method",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/bush-navigation.md",
+      "uid": "udos-guide-survival-20260129164700-UTC-L300AB51",
+      "title": "Australian Bush Navigation Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/bush-tucker-foraging.md",
+      "uid": "udos-guide-survival-20260129164800-UTC-L300AB52",
+      "title": "Australian Native Edible Plants (Bush Tucker)",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/bushfire-survival.md",
+      "uid": "udos-guide-survival-20260129164900-UTC-L300AB53",
+      "title": "Bushfire Survival Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/chemical-purification.md",
+      "uid": "udos-guide-survival-20260129165000-UTC-L300AB54",
+      "title": "Water Purification: Chemical Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/composting-basics.md",
+      "uid": "udos-guide-survival-20260129165100-UTC-L300AB55",
+      "title": "Composting Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/drying-dehydration.md",
+      "uid": "udos-guide-survival-20260129165200-UTC-L300AB56",
+      "title": "Food Preservation: Drying & Dehydration",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/emergency-debris-hut.md",
+      "uid": "udos-guide-survival-20260129165300-UTC-L300AB57",
+      "title": "Emergency Debris Hut Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/essential-knots.md",
+      "uid": "udos-guide-survival-20260129165400-UTC-L300AB58",
+      "title": "Essential Knots for Survival",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/fire-building-basics.md",
+      "uid": "udos-guide-survival-20260129165500-UTC-L300AB59",
+      "title": "Fire Building Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/knife-sharpening.md",
+      "uid": "udos-guide-survival-20260129165600-UTC-L300AB60",
+      "title": "Knife Sharpening Fundamentals",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/knot-tying.md",
+      "uid": "udos-guide-survival-20260129165700-UTC-L300AB61",
+      "title": "Knot Tying Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/lean-to-shelter.md",
+      "uid": "udos-guide-survival-20260129165800-UTC-L300AB62",
+      "title": "Lean-To Shelter Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/map-compass-basics.md",
+      "uid": "udos-guide-survival-20260129165900-UTC-L300AB63",
+      "title": "Map & Compass Navigation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/rainwater-harvesting.md",
+      "uid": "udos-guide-survival-20260129170000-UTC-L300AB64",
+      "title": "Rainwater Harvesting Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/shelter-construction.md",
+      "uid": "udos-guide-survival-20260129170100-UTC-L300AB65",
+      "title": "Shelter Construction Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/situational-awareness.md",
+      "uid": "udos-guide-survival-20260129170200-UTC-L300AB66",
+      "title": "Situational Awareness & Threat Assessment",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/snakebite-treatment.md",
+      "uid": "udos-guide-survival-20260129170300-UTC-L300AB67",
+      "title": "Australian Snakebite Treatment Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/snow-shelters.md",
+      "uid": "udos-guide-survival-20260129170400-UTC-L300AB68",
+      "title": "Snow Shelters: Quinzhee & Snow Cave",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/solar-power-basics.md",
+      "uid": "udos-guide-survival-20260129170500-UTC-L300AB69",
+      "title": "Solar Power Basics: Off-Grid Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/tarp-shelter-configurations.md",
+      "uid": "udos-guide-survival-20260129170600-UTC-L300AB70",
+      "title": "Tarp Shelter Configurations",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/water-purification-methods.md",
+      "uid": "udos-guide-survival-20260129170700-UTC-L300AB71",
+      "title": "Water Purification Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/water-sources-wilderness.md",
+      "uid": "udos-guide-survival-20260129170800-UTC-L300AB72",
+      "title": "Australian Water Sources & Purification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/wild-edible-basics.md",
+      "uid": "udos-guide-survival-20260129170900-UTC-L300AB73",
+      "title": "Wild Edible Plants: Basics & Safety",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "survival/wound-care-bleeding.md",
+      "uid": "udos-guide-survival-20260129171000-UTC-L300AB74",
+      "title": "First Aid: Wound Care & Bleeding Control",
+      "tags": [
+        "guide",
+        "knowledge",
+        "survival"
+      ]
+    },
+    {
+      "path": "tech/README.md",
+      "uid": "udos-guide-tech-20260129120000-UTC-L300AB18",
+      "title": "Tech Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/control-flow.md",
+      "uid": "udos-guide-tech-20260129131100-UTC-L300AB75",
+      "title": "Control Flow Patterns in uCODE",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/daily-automation.md",
+      "uid": "udos-guide-tech-20260129131200-UTC-L300AB76",
+      "title": "Daily Automation Script",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/devices/README.md",
+      "uid": "udos-guide-tech-20260129131300-UTC-L300AB77",
+      "title": "uDOS-Compatible Devices - Sonic Screwdriver Library",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/devices/firmware.md",
+      "uid": "udos-guide-tech-20260129131400-UTC-L300AB78",
+      "title": "Firmware Management",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/devices/meshcore.md",
+      "uid": "udos-guide-tech-20260129131500-UTC-L300AB79",
+      "title": "MeshCore Devices",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/devices/screwdriver.md",
+      "uid": "udos-guide-tech-20260129131600-UTC-L300AB80",
+      "title": "Sonic Screwdriver Device Provisioning",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/pomodoro-guide.md",
+      "uid": "udos-guide-tech-20260129131700-UTC-L300AB81",
+      "title": "Pomodoro Technique Guide",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/ucode-mini-game.md",
+      "uid": "udos-guide-tech-20260130173000-UTC-L300AB22",
+      "title": "uCODE Mini-Game: Guess the Number",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "tech/variables.md",
+      "uid": "udos-guide-tech-20260129131800-UTC-L300AB82",
+      "title": "Variables in uCODE",
+      "tags": [
+        "guide",
+        "knowledge",
+        "tech"
+      ]
+    },
+    {
+      "path": "water/README.md",
+      "uid": "udos-guide-water-20251204100000-UTC-L300AB13",
+      "title": "Water Procurement & Purification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water",
+        "survival"
+      ]
+    },
+    {
+      "path": "water/boiling-purification.md",
+      "uid": "udos-guide-water-20251204113400-UTC-L300AB98",
+      "title": "Water Purification: Boiling Method",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/chemical-purification.md",
+      "uid": "udos-guide-water-20251204113500-UTC-L300AB99",
+      "title": "Water Purification: Chemical Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/coastal_water_desalination.md",
+      "uid": "udos-guide-water-20251204113600-UTC-L300AB26",
+      "title": "Coastal Water Desalination",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/desert_water_procurement.md",
+      "uid": "udos-guide-water-20251204113700-UTC-L300AB27",
+      "title": "Desert Water Procurement",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/emergency_water_sources.md",
+      "uid": "udos-guide-water-20251204113800-UTC-L300AB28",
+      "title": "Emergency Water Sources",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/finding_water_sources.md",
+      "uid": "udos-guide-water-20251204113900-UTC-L300AB29",
+      "title": "Finding Water Sources",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/ice_and_snow_water_extraction.md",
+      "uid": "udos-guide-water-20251204100000-UTC-L300AB30",
+      "title": "Ice And Snow Water Extraction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/long-term_water_storage.md",
+      "uid": "udos-guide-water-20251204100100-UTC-L300AB31",
+      "title": "Long-Term Water Storage",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/plant_water_sources.md",
+      "uid": "udos-guide-water-20251204100200-UTC-L300AB32",
+      "title": "Plant Water Sources",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/rainwater-harvesting.md",
+      "uid": "udos-guide-water-20251204100300-UTC-L300AB33",
+      "title": "Rainwater Harvesting Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/rainwater_collection.md",
+      "uid": "udos-guide-water-20251204100400-UTC-L300AB34",
+      "title": "Rainwater Collection",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/solar_still_construction.md",
+      "uid": "udos-guide-water-20251204100500-UTC-L300AB35",
+      "title": "Solar Still Construction",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/spring_water_identification.md",
+      "uid": "udos-guide-water-20251204100600-UTC-L300AB36",
+      "title": "Spring Water Identification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/transpiration_bag_technique.md",
+      "uid": "udos-guide-water-20251204100700-UTC-L300AB37",
+      "title": "Transpiration Bag Technique",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/underground_water_detection.md",
+      "uid": "udos-guide-water-20251204100800-UTC-L300AB38",
+      "title": "Underground Water Detection",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water-purification-methods.md",
+      "uid": "udos-guide-water-20251204100900-UTC-L300AB39",
+      "title": "Water Purification Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water-sources.md",
+      "uid": "udos-guide-water-20251204101000-UTC-L300AB40",
+      "title": "Australian Water Sources & Purification",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_conservation.md",
+      "uid": "udos-guide-water-20251204101100-UTC-L300AB41",
+      "title": "Water Conservation",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_contamination_signs.md",
+      "uid": "udos-guide-water-20251204101200-UTC-L300AB42",
+      "title": "Water Contamination Signs",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_filtration_systems.md",
+      "uid": "udos-guide-water-20251204101300-UTC-L300AB43",
+      "title": "Water Filtration Systems",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_purification_methods.md",
+      "uid": "udos-guide-water-20251204101400-UTC-L300AB44",
+      "title": "Water Purification Methods",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_quality_testing.md",
+      "uid": "udos-guide-water-20251204101500-UTC-L300AB45",
+      "title": "Water Quality Testing",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_rationing_strategies.md",
+      "uid": "udos-guide-water-20251204101600-UTC-L300AB46",
+      "title": "Water Rationing Strategies",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/water_storage_techniques.md",
+      "uid": "udos-guide-water-20251204101700-UTC-L300AB47",
+      "title": "Water Storage Techniques",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "water/well_digging_basics.md",
+      "uid": "udos-guide-water-20251204101800-UTC-L300AB48",
+      "title": "Well Digging Basics",
+      "tags": [
+        "guide",
+        "knowledge",
+        "water"
+      ]
+    },
+    {
+      "path": "wellbeing/README.md",
+      "uid": "udos-guide-wellbeing-20260130021900-UTC-L300AB49",
+      "title": "Well-Being Knowledge",
+      "tags": [
+        "guide",
+        "knowledge",
+        "wellbeing"
+      ]
+    },
+    {
+      "path": "wellbeing/circadian-rhythms.md",
+      "uid": "udos-guide-wellbeing-20260130022000-UTC-L300AB50",
+      "title": "Circadian Rhythms",
+      "tags": [
+        "guide",
+        "knowledge",
+        "wellbeing"
+      ]
+    },
+    {
+      "path": "wellbeing/mood-factors.md",
+      "uid": "udos-guide-wellbeing-20260130022100-UTC-L300AB51",
+      "title": "Mood Factors System",
+      "tags": [
+        "guide",
+        "knowledge",
+        "wellbeing"
+      ]
+    },
+    {
+      "path": "wellbeing/sleep-hygiene-optimization.md",
+      "uid": "udos-guide-wellbeing-20260130022200-UTC-L300AB52",
+      "title": "Sleep Hygiene & Rest Optimization",
+      "tags": [
+        "guide",
+        "knowledge",
+        "wellbeing"
+      ]
+    },
+    {
+      "path": "wellbeing/stress-management-resilience.md",
+      "uid": "udos-guide-wellbeing-20260130022300-UTC-L300AB53",
+      "title": "Stress Management & Mental Resilience",
+      "tags": [
+        "guide",
+        "knowledge",
+        "wellbeing"
+      ]
+    }
+  ]
+}
